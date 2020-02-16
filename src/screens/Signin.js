@@ -1,0 +1,44 @@
+import React, { Component } from 'react'
+import { Text, View , ImageBackground, StyleSheet} from 'react-native';
+import AppLogo from '../generic/AppLogo';
+import GenericButton from '../generic/GenericButton';
+
+const Welcome = ({navigation})=>{
+    return(
+        <View>
+            <ImageBackground 
+                resizeMode="cover" 
+                style={styles.bgImg} 
+                source={require('../../assets/SIGN_IN_AND_APPLY_PAGE.png')}
+            >
+                <AppLogo
+                    text1="Apply or sign in"
+                    text2="to your account"
+                />
+                <GenericButton
+                    style={styles.genericBtn}
+                    text="Sign In"
+                    onPress={()=>navigation.navigate("Profile")}
+                />
+                <GenericButton
+                    style={styles.genericBtn}
+                    text="Apply"
+                    onPress={()=>navigation.navigate("Profile")}
+                />
+            </ImageBackground>
+        </View>
+    )
+}
+
+export default Welcome;
+
+
+const styles = StyleSheet.create({
+    bgImg:{
+        width:"100%",
+        height:"100%",
+    },
+    genericBtn:{
+        marginTop:20
+    }
+})

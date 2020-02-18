@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View , TouchableOpacity,Image, StyleSheet, ScrollView} from 'react-native';
+import { Text, View , TouchableOpacity,Image, StyleSheet, ScrollView, PixelRatio} from 'react-native';
 import AppLogo from '../generic/AppLogo';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -47,7 +47,7 @@ const Welcome = ({navigation})=>{
                     {loyaltyCard.map((list,i)=>{
                         return(
                             <View key={i} style={styles.card}>
-                                <TouchableOpacity onPress={()=>navigation.navigate("SignIn")} activeOpacity={.5}>
+                                <TouchableOpacity onPress={()=>navigation.navigate("ApplyOrSignin")} activeOpacity={.5}>
                                     <View style={styles.nameView}>
                                         <Text style={styles.cardName}>{list.name}</Text>
                                     </View>

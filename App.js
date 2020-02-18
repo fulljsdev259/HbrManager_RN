@@ -18,8 +18,12 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Welcome from './src/screens/Welcome';
-import SignIn from './src/screens/Signin';
+import ApplyOrSignin from './src/screens/ApplyOrSignin';
 import Profile from './src/screens/Profile';
+import SignIn from './src/screens/SignIn';
+import ApplyForLc from './src/screens/ApplyForLc';
+import AppLoyaltyCard from './src/screens/AppLoyaltyCard';
+import MemberBenefits from './src/screens/MenberBenefits';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -35,8 +39,22 @@ const App= () => {
         initialRouteName="Welcome"
       >
         <Stack.Screen 
-          name="Profile" 
-          component={Profile}
+          name="MemberBenefits" 
+          component={MemberBenefits}
+          options={
+            {headerShown:false}
+          }
+        />
+        <Stack.Screen 
+          name="AppLoyaltyCard" 
+          component={AppLoyaltyCard}
+          options={
+            {headerShown:false}
+          }
+        />
+        <Stack.Screen 
+          name="ApplyForLc" 
+          component={ApplyForLc}
           options={
             {headerShown:false}
           }
@@ -44,6 +62,20 @@ const App= () => {
         <Stack.Screen 
           name="SignIn" 
           component={SignIn}
+          options={
+            {headerShown:false}
+          }
+        />
+        <Stack.Screen 
+          name="Profile" 
+          component={Profile}
+          options={
+            {headerShown:false}
+          }
+        />
+        <Stack.Screen 
+          name="ApplyOrSignin" 
+          component={ApplyOrSignin}
           options={
             {headerShown:false}
           }

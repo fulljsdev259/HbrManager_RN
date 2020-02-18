@@ -4,7 +4,7 @@ import AppLogo from '../generic/AppLogo';
 import GenericButton from '../generic/GenericButton';
 import COLOR from '../utiles/color';
 
-const Profile = ()=>{
+const Profile = ({navigation})=>{
     return(
         <View style={styles.container}>
             <ScrollView>
@@ -48,19 +48,24 @@ const Profile = ()=>{
                 </View>
                 <GenericButton
                     style={styles.genericBtn} 
-                    text="Change Password"/>
+                    text="Change Password"
+                    onPress={()=>navigation.navigate("SignIn")}
+                />
                 <GenericButton 
                     style={styles.genericBtn} 
                     text="Recent Orders"
+                    onPress={()=>navigation.navigate("SignIn")}
                 />
                 <GenericButton 
                     style={styles.genericBtn} 
                     text="Edit"
+                    onPress={()=>navigation.navigate("SignIn")}
                 />
                 <GenericButton 
                     style={styles.genericBtn} 
                     text="Log Out"
                     bgColor={COLOR.darkGreen}
+                    onPress={()=>navigation.navigate("SignIn")}
                 />
             </ScrollView>
         </View>

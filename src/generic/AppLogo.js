@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View ,Image, StyleSheet} from 'react-native';
+import { Text, View ,Image, StyleSheet, PixelRatio} from 'react-native';
 import COLOR from '../utiles/color';
+import DeviceInfo from '../utiles/deviceInfo';
 
 const AppLogo = ({text1, text2, style})=>{
     return(
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     },
     applogoWrapper:{
         width:"45%",
-        height:90,
+        height:DeviceInfo.pixel(33),
     },
     applogoView:{
         flexDirection:"row",
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     text:{
         color:COLOR.white,
         textAlign:'center',
-        fontSize:18,
+        fontSize:DeviceInfo.pixel(7.5),
         fontFamily:'Poppins-Medium'
     },
 })

@@ -1,47 +1,77 @@
-import React, { Component } from 'react'
-import { Text, View , ImageBackground, StyleSheet} from 'react-native';
+import React, { Component } from 'react';
+import { Text, View ,Image, StyleSheet,ImageBackground, PixelRatio, ScrollView} from 'react-native';
+import COLOR from '../utiles/color';
+import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
+import GenericTextInput from '../generic/GenericTextInput';
 import GenericButton from '../generic/GenericButton';
 
-const Welcome = ({navigation})=>{
+const SignIn = ({navigation})=>{
     return(
         <View>
             <ImageBackground 
                 resizeMode="cover" 
                 style={styles.bgImg} 
-                source={require('../../assets/SIGN_IN_AND_APPLY_PAGE.png')}
+                source={require('../../assets/SIGN_INTO_ACCOUNT.png')}
             >
-            <View style={{backgroundColor:'rgba(000, 000, 000, 0.6)',flex:1}}>
-                <AppLogo
-                    text1="Apply or sign in"
-                    text2="to your account"
-                    style={{paddingVertical:40}}
-                />
-                <GenericButton
-                    style={styles.genericBtn}
-                    text="Sign In"
-                    onPress={()=>navigation.navigate("Profile")}
-                />
-                <GenericButton
-                    style={styles.genericBtn}
-                    text="Apply"
-                    onPress={()=>navigation.navigate("Profile")}
-                />
+                <View style={styles.overlay}>
+                    <ScrollView>
+                        <AppLogo
+                            text1="Sign in to"
+                            text2="your account"
+                            style={{paddingTop:DeviceInfo.pixel(23), paddingBottom:DeviceInfo.pixel(17)}}
+                        />
+                        <View style={styles.wrapper}>
+                            <GenericTextInput
+                                placeholder="Email"
+                                
+                            />
+                            <GenericTextInput
+                                placeholder="Password"
+                            />
+                            <GenericButton 
+                                text="Sign In"
+                                style={styles.genericBtn}
+                                onPress={()=>navigation.navigate("ApplyForLc")}
+                            />
+                            <GenericButton 
+                                text="Continue with Google"
+                                type="google"
+                                style={{marginTop :DeviceInfo.pixel(22)}}
+                                onPress={()=>navigation.navigate("ApplyForLc")}
+                            />
+                            <GenericButton 
+                                text="Continue with Facebook"
+                                type="fb"
+                                style={styles.genericBtn}
+                                onPress={()=>navigation.navigate("ApplyForLc")}
+                            />
+                        </View>
+                    </ScrollView>
                 </View>
             </ImageBackground>
         </View>
     )
 }
 
-export default Welcome;
+export default SignIn;
 
 
 const styles = StyleSheet.create({
     bgImg:{
-        width:"100%",
-        height:"100%",
+        width:'100%',
+        height:"100%"
+    },
+    overlay:{
+        backgroundColor:COLOR.overlay,
+        flex:1
+    },
+    wrapper:{
+        // width:"100%",
+        // fle
+        // alignSelf:'center'
     },
     genericBtn:{
-        marginTop:20
+        marginTop:DeviceInfo.pixel(5)
     }
 })

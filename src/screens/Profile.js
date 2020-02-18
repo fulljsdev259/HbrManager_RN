@@ -10,6 +10,7 @@ const Profile = ()=>{
             <ScrollView>
                 <AppLogo
                     text1="Profile"
+                    style={{paddingTop:60, paddingBottom:40}}
                 />
                 <View style={styles.inputContainer}>
                     <View style={[styles.inputWrapper,{marginTop:0}]}>

@@ -37,6 +37,7 @@ const Welcome = ({navigation})=>{
         
         <View style={styles.container}>
             <ScrollView>
+                
             <AppLogo
                 text1="Welcome to the"
                 text2="Loyalty Card App"
@@ -86,17 +87,19 @@ const styles = StyleSheet.create({
     },
     card:{
         width:"48%",
-        height:DeviceInfo.width*.4,
-        marginBottom:15
+        height:DeviceInfo.width*.36,
+        marginBottom:7,
+        // borderRadius:10
     },
     cardContainer:{
         flexDirection:'row',
         justifyContent:'center',
-        paddingBottom:DeviceInfo.width*.3
+        // paddingBottom:DeviceInfo.width*.3
     },
     cardImg:{
         width:'100%',
-        height:"100%"
+        height:"100%",
+        borderRadius:10
     },
     cardName:{
         color:COLOR.white,

@@ -11,9 +11,11 @@ const Welcome = ({navigation})=>{
                 style={styles.bgImg} 
                 source={require('../../assets/SIGN_IN_AND_APPLY_PAGE.png')}
             >
+            <View style={{backgroundColor:'rgba(000, 000, 000, 0.6)',flex:1}}>
                 <AppLogo
                     text1="Apply or sign in"
                     text2="to your account"
+                    style={{paddingVertical:40}}
                 />
                 <GenericButton
                     style={styles.genericBtn}
@@ -25,6 +27,7 @@ const Welcome = ({navigation})=>{
                     text="Apply"
                     onPress={()=>navigation.navigate("Profile")}
                 />
+                </View>
             </ImageBackground>
         </View>
     )

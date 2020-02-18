@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View ,Image, StyleSheet} from 'react-native';
 import COLOR from '../utiles/color';
 
-const AppLogo = ({text1, text2})=>{
+const AppLogo = ({text1, text2, style})=>{
     return(
         <View>
             <View style={styles.applogoView}>
@@ -19,9 +19,9 @@ const AppLogo = ({text1, text2})=>{
                 <View style={styles.greenLine}/>
                 <View style={styles.yellowLine}/>
             </View>
-            <View style={styles.textContainer}>
+            <View style={[style ? {...style} : styles.textContainer,]}>
                 {text1 && <Text style={styles.text}>{text1}</Text>}
-                {text2 &&<Text style={styles.text}>{text2}</Text>}
+                {text2 &&<Text style={[styles.text,{marginTop:-10}]}>{text2}</Text>}
             </View>
         </View>
     )
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     applogoWrapper:{
         width:"45%",
-        height:120,
+        height:90,
     },
     applogoView:{
         flexDirection:"row",
@@ -46,24 +46,24 @@ const styles = StyleSheet.create({
         paddingBottom:20,
     },
     yellowLine:{
-        height:1.4,
+        height:1.2,
         width:"100%",
         backgroundColor:COLOR.yellow,
         marginTop:2
     },
     greenLine:{
-        height:1.4,
+        height:1.2,
         width:"100%",
         backgroundColor:COLOR.darkGreen,
         marginTop:2
     },
     textContainer:{
-        paddingVertical:50
+        paddingVertical:30
     },
     text:{
         color:COLOR.white,
         textAlign:'center',
-        fontSize:20,
+        fontSize:18,
         fontFamily:'Poppins-Medium'
     },
 })

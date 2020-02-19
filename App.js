@@ -24,6 +24,8 @@ import SignIn from './src/screens/SignIn';
 import ApplyForLc from './src/screens/ApplyForLc';
 import AppLoyaltyCard from './src/screens/AppLoyaltyCard';
 import MemberBenefits from './src/screens/MenberBenefits';
+import OderContactLens from './src/screens/OderContactLens';
+import BookAppointment from './src/screens/BookAppointment';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -36,8 +38,22 @@ const App= () => {
     <>
     <NavigationContainer ref={ref}>
       <Stack.Navigator
-        initialRouteName="Welcome"
+        initialRouteName="BookAppointment"
       >
+        <Stack.Screen 
+          name="BookAppointment" 
+          component={BookAppointment}
+          options={
+            {headerShown:false}
+          }
+        />
+        <Stack.Screen 
+          name="OderContactLens" 
+          component={OderContactLens}
+          options={
+            {headerShown:false}
+          }
+        />
         <Stack.Screen 
           name="MemberBenefits" 
           component={MemberBenefits}

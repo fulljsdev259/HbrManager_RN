@@ -3,6 +3,7 @@ import { Text, View , ImageBackground, StyleSheet, Image,   TouchableOpacity} fr
 import AppLogo from '../generic/AppLogo';
 import COLOR from '../utiles/color';
 import Icon from 'react-native-vector-icons/AntDesign';
+import DeviceInfo from '../utiles/deviceInfo';
 
 const Footer = ({})=>{
     return(
@@ -39,8 +40,8 @@ export default Footer;
 
 const styles = StyleSheet.create({
     imgView:{
-        width:30,
-        height:30
+        width:DeviceInfo.wp("6%"),
+        height:DeviceInfo.wp("6%")
       },
       img:{
         width:'100%',

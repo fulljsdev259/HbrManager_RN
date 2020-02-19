@@ -5,7 +5,7 @@ import COLOR from '../utiles/color';
 import Icon from 'react-native-vector-icons/AntDesign';
 import DeviceInfo from '../utiles/deviceInfo';
 
-const GenericButton = ({text, style, bgColor, onPress, type})=>{
+const GenericButton = ({text, style, bgColor, onPress, type, textStyle})=>{
     return(
         <TouchableOpacity onPress={() => {onPress ? onPress() : null}} activeOpacity={.5}>
             <View style={[styles.wrapper,{...style}]}>
@@ -23,6 +23,7 @@ const GenericButton = ({text, style, bgColor, onPress, type})=>{
                     <Text 
                         style={[
                             styles.btnText,
+                            {...textStyle},
                             { color : type ? COLOR.black : COLOR.white}
                         ]}>
                         {text}
@@ -41,7 +42,7 @@ export default GenericButton;
 
 const styles = StyleSheet.create({
     btnText:{
-        paddingVertical:14,
+        paddingVertical:DeviceInfo.hp("1.8%"),
         fontFamily:"Raleway-Medium",
         
     },

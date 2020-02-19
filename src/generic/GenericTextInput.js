@@ -21,7 +21,7 @@ export default GenericTextInput;
 const styles = StyleSheet.create({
     input:{
         backgroundColor:COLOR.textFieldBg,
-        marginBottom:12,
+        marginBottom:DeviceInfo.hp("1.5%"),
         borderRadius:30,
         width:"100%",
         paddingHorizontal:20

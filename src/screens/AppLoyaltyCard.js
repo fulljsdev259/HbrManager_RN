@@ -15,7 +15,7 @@ const AppLoyaltyCard = ({navigation})=>{
             >
                 <View style={styles.overlay}>
                     <AppLogo
-                        style={{paddingVertical:40}}
+                        style={{paddingVertical:DeviceInfo.hp("5.6%")}}
                     />
                     <Text style={styles.cardText}>
                         Thanks for your loyalty card application. We will process your details and confirm your membership number within 1-2 working days

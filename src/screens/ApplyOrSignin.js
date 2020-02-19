@@ -3,6 +3,7 @@ import { Text, View , ImageBackground, StyleSheet} from 'react-native';
 import AppLogo from '../generic/AppLogo';
 import GenericButton from '../generic/GenericButton';
 import COLOR from '../utiles/color';
+import DeviceInfo from '../utiles/deviceInfo';
 
 const ApplyOrSignin = ({navigation})=>{
     return(
@@ -16,7 +17,7 @@ const ApplyOrSignin = ({navigation})=>{
                 <AppLogo
                     text1="Apply or sign in"
                     text2="to your account"
-                    style={{paddingVertical:40}}
+                    style={{paddingVertical:DeviceInfo.hp("4.5%")}}
                 />
                 <GenericButton
                     style={styles.genericBtn}

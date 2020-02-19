@@ -16,7 +16,7 @@ const ApplyForLc = ({navigation})=>{
                 <AppLogo
                     text1="Apply for a"
                     text2="loyalty card"
-                    style={{paddingTop:60, paddingBottom:40}}
+                    style={{paddingTop:DeviceInfo.hp("7%"), paddingBottom:DeviceInfo.hp("4%")}}
                 />
                 {
                     textFeild.map((item)=>{
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
         backgroundColor:COLOR.blackBg
     },
     genericBtn:{
-        marginTop:DeviceInfo.pixel(12),
-        marginBottom:DeviceInfo.pixel(30)
+        marginTop:DeviceInfo.hp("3.2%"),
+        marginBottom:DeviceInfo.hp("9%")
     },
     input:{
         backgroundColor:'rgba(67,68,69,.4)'

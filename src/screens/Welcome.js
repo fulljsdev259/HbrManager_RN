@@ -33,6 +33,8 @@ const loyaltyCard = [
 ]
 
 const Welcome = ({navigation})=>{
+    console.log(DeviceInfo,'DeviceInfo');
+    
     return(
         
         <View style={styles.container}>
@@ -81,13 +83,13 @@ const styles = StyleSheet.create({
     cardWrapper:{
         flexDirection:'row',
         flexWrap:'wrap',
-        width:"80%",
+        width:DeviceInfo.wp("80%"),
         alignItems:'center',
         justifyContent:"space-between"
     },
     card:{
         width:"48%",
-        height:DeviceInfo.width*.36,
+        height:DeviceInfo.hp("17.5%"),
         marginBottom:7,
         // borderRadius:10
     },

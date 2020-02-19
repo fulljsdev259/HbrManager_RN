@@ -19,7 +19,7 @@ const SignIn = ({navigation})=>{
                         <AppLogo
                             text1="Sign in to"
                             text2="your account"
-                            style={{paddingTop:DeviceInfo.pixel(23), paddingBottom:DeviceInfo.pixel(17)}}
+                            style={{paddingTop:DeviceInfo.hp("7%"), paddingBottom:DeviceInfo.hp("4%")}}
                         />
                         <View style={styles.wrapper}>
                             <GenericTextInput
@@ -39,12 +39,14 @@ const SignIn = ({navigation})=>{
                                 type="google"
                                 style={{marginTop :DeviceInfo.pixel(22)}}
                                 onPress={()=>navigation.navigate("ApplyForLc")}
+                                bgColor={COLOR.white}
                             />
                             <GenericButton 
                                 text="Continue with Facebook"
                                 type="fb"
                                 style={styles.genericBtn}
                                 onPress={()=>navigation.navigate("ApplyForLc")}
+                                bgColor={COLOR.white}
                             />
                         </View>
                     </ScrollView>
@@ -72,6 +74,6 @@ const styles = StyleSheet.create({
         // alignSelf:'center'
     },
     genericBtn:{
-        marginTop:DeviceInfo.pixel(5)
+        marginTop:DeviceInfo.hp("1.6%")
     }
 })

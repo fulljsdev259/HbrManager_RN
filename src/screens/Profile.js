@@ -3,6 +3,7 @@ import { Text, View ,ScrollView, StyleSheet, TextInput} from 'react-native';
 import AppLogo from '../generic/AppLogo';
 import GenericButton from '../generic/GenericButton';
 import COLOR from '../utiles/color';
+import DeviceInfo from '../utiles/deviceInfo';
 
 const Profile = ({navigation})=>{
     return(
@@ -10,7 +11,7 @@ const Profile = ({navigation})=>{
             <ScrollView>
                 <AppLogo
                     text1="Profile"
-                    style={{paddingTop:60, paddingBottom:40}}
+                    style={{paddingTop:DeviceInfo.hp("8%"), paddingBottom:DeviceInfo.hp("4%")}}
                 />
                 <View style={styles.inputContainer}>
                     <View style={[styles.inputWrapper,{marginTop:0}]}>
@@ -84,10 +85,10 @@ const styles = StyleSheet.create({
     inputWrapper:{
         flexDirection:'row',
         alignItems:'center',
-        marginTop:10,
+        marginTop:DeviceInfo.hp("1.1%"),
         width:'70%',
         alignSelf:'center',
-        borderBottomWidth:2,
+        borderBottomWidth:1.2,
         borderBottomColor:COLOR.yellow,
         paddingBottom:10
     },
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
         fontFamily:'Raleway-Medium',
     },
     inputContainer:{
-        marginBottom:25
+        marginBottom:DeviceInfo.hp("3%")
     },
     fieldName:{
         color:COLOR.white,

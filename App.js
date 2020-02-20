@@ -38,7 +38,7 @@ const App= () => {
     <>
     <NavigationContainer ref={ref}>
       <Stack.Navigator
-        initialRouteName="BookAppointment"
+        initialRouteName="Welcome"
       >
         <Stack.Screen 
           name="BookAppointment" 

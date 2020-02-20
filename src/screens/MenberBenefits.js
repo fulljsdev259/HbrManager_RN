@@ -51,7 +51,8 @@ const cards = [
       'New product information and early bird launch invitations',
     ],
     bg: '#39565d',
-    offer:"£9"
+    offer:"£9",
+    screen:'OderContactLens'
   },
   {
     title: 'Black Card',
@@ -67,11 +68,12 @@ const cards = [
     ],
     bg: '#272727',
     style:{marginTop:DeviceInfo.hp("4.4%")},
-    offer:"£15"
+    offer:"£15",
+    screen:"BookAppointment"
   },
 ];
 
-const MemberBenefits = () => {
+const MemberBenefits = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -106,7 +108,9 @@ const MemberBenefits = () => {
         </View>
         <View style={styles.cardContainer}>
             {cards.map((item, i) => {
-            return <MembershipCards item={item} key={i} />;
+            return <MembershipCards
+            onPress={()=>  navigation.navigate(item.screen)}
+            item={item} key={i} />;
             })}
         </View>
       </ScrollView>

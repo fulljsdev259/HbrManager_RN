@@ -11,7 +11,7 @@ const Profile = ({navigation})=>{
             <ScrollView>
                 <AppLogo
                     text1="Profile"
-                    style={{paddingTop:DeviceInfo.hp("8%"), paddingBottom:DeviceInfo.hp("4%")}}
+                    style={{paddingTop:DeviceInfo.hp("7%"), paddingBottom:DeviceInfo.hp("3%")}}
                 />
                 <View style={styles.inputContainer}>
                     <View style={[styles.inputWrapper,{marginTop:0}]}>
@@ -68,6 +68,7 @@ const Profile = ({navigation})=>{
                     bgColor={COLOR.darkGreen}
                     onPress={()=>navigation.navigate("SignIn")}
                 />
+                <View style={{ paddingBottom:DeviceInfo.isSmall ?  DeviceInfo.hp("8%") : 10}} />
             </ScrollView>
         </View>
         

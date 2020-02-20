@@ -49,6 +49,7 @@ const SignIn = ({navigation})=>{
                                 bgColor={COLOR.white}
                             />
                         </View>
+                        <View style={{ paddingBottom:DeviceInfo.isSmall ?  DeviceInfo.hp("8%") : 10}} />
                     </ScrollView>
                 </View>
             </ImageBackground>

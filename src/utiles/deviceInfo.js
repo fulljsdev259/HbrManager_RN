@@ -10,6 +10,7 @@ const DeviceInfo ={
     pixel:(size)=>PixelRatio.getPixelSizeForLayoutSize(size),
     wp:(size)=>wp(size),
     hp:(size)=>hp(size),
+    isSmall:height < 640 ? true : false
 }
 
 export default DeviceInfo;

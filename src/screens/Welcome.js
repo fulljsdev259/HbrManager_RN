@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     cardContainer:{
         flexDirection:'row',
         justifyContent:'center',
-        // paddingBottom:DeviceInfo.width*.3
+        paddingBottom:DeviceInfo.isSmall ?  DeviceInfo.hp("8%") : 10
     },
     cardImg:{
         width:'100%',

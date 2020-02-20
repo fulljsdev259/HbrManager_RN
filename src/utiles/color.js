@@ -7,7 +7,8 @@ const COLOR = {
     textFieldBg:'rgba(255, 255, 255, .13)',
     black:"#000000",
     lightYellow:"rgba(212,156,57,.6)",
-    lightGreen:"rgba(58, 92, 100, .6)"
+    lightGreen:"rgba(58, 92, 100, .6)",
+    bubble:'#999999'
 }
 
 export default COLOR;

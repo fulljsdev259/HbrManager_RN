@@ -4,7 +4,7 @@ import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 import GenericButton from './/GenericButton';
 
-const MembershipCards = ({item}) => {
+const MembershipCards = ({item,onPress}) => {
   function checkIndexIsEven(n) {
     return n % 2 == 0;
   }
@@ -38,6 +38,7 @@ const MembershipCards = ({item}) => {
         text="Apply"
         style={styles.genericBtn}
         textStyle={styles.btnTextStyle}
+        onPress={onPress}
       />
     </View>
   );

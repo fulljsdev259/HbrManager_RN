@@ -40,8 +40,8 @@ export default Footer;
 
 const styles = StyleSheet.create({
     imgView:{
-        width:DeviceInfo.wp("6%"),
-        height:DeviceInfo.wp("6%")
+        width:DeviceInfo.wp("6.8%"),
+        height:DeviceInfo.wp("6.8%")
       },
       img:{
         width:'100%',

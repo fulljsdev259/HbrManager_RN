@@ -11,8 +11,9 @@ import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
 import {color} from 'react-native-reanimated';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const contactLenses = [
+export const contactLenses = [
   {
     img: require('../../assets/contact-lenses/Blink-N-Clean-Eye-Drops.png'),
     name: 'comfi Colors 1 Day',
@@ -27,7 +28,7 @@ const contactLenses = [
     img: require('../../assets/contact-lenses/blink-n-clean-eye-drops788-131.png'),
     name: 'Blink-N-Clean Eye Drops',
     price: '£3.99',
-    resizeMode:"contain"
+    resizeMode: 'contain',
   },
   {
     img: require('../../assets/contact-lenses/dailies-total-1786-131.png'),
@@ -38,13 +39,13 @@ const contactLenses = [
     img: require('../../assets/contact-lenses/comfi-all-in-one-solution-3-month788-131.png'),
     name: 'comfi All-in-One Solution Triple Pack',
     price: '£12.50',
-    resizeMode:"contain"
+    resizeMode: 'contain',
   },
   {
     img: require('../../assets/contact-lenses/comfi-drops1061-137.png'),
     name: 'comfi Drops',
     price: '£3.75',
-    resizeMode:"contain"
+    resizeMode: 'contain',
   },
   {
     img: require('../../assets/contact-lenses/Blink-N-Clean-Eye-Drops.png'),
@@ -58,7 +59,7 @@ const contactLenses = [
   },
 ];
 
-const OderContactLens = ({}) => {
+const OderContactLens = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -75,15 +76,23 @@ const OderContactLens = ({}) => {
           <View style={styles.cardWrapper}>
             {contactLenses.map((list, i) => {
               return (
-                <View style={styles.card}>
-                  <View style={styles.imgViewWrapper}>
-                    <View style={styles.imgView}>
-                      <Image resizeMode={list.resizeMode} style={styles.img} source={list.img} />
+                
+                  <View style={styles.card}>
+                    <TouchableOpacity activeOpacity={.5} onPress={()=>navigation.navigate('LensesDetails',{index:i})}>
+                    <View style={styles.imgViewWrapper}>
+                      <View style={styles.imgView}>
+                        <Image
+                          resizeMode={list.resizeMode}
+                          style={styles.img}
+                          source={list.img}
+                        />
+                      </View>
                     </View>
+                    <Text style={styles.name}>{list.name}</Text>
+                    <Text style={styles.price}>{list.price}</Text>
+                    </TouchableOpacity>
                   </View>
-                  <Text style={styles.name}>{list.name}</Text>
-                  <Text style={styles.price}>{list.price}</Text>
-                </View>
+                
               );
             })}
           </View>
@@ -113,36 +122,36 @@ const styles = StyleSheet.create({
     borderColor: COLOR.yellow,
     width: '48.7%',
     height: DeviceInfo.hp('17.5%'),
-    marginBottom:DeviceInfo.hp('1.1%'),
-    paddingHorizontal:10
+    marginBottom: DeviceInfo.hp('1.1%'),
+    paddingHorizontal: 10,
   },
   cardContaner: {
     alignItems: 'center',
-    marginBottom:DeviceInfo.hp('7%')
+    marginBottom: DeviceInfo.hp('7%'),
   },
   imgView: {
-      width:'88%',
-      alignSelf:'center',
-      height:DeviceInfo.hp('8.5%'),
+    width: '88%',
+    alignSelf: 'center',
+    height: DeviceInfo.hp('8.5%'),
     //   borderBottomWidth:2
   },
   img: {
     width: '100%',
     height: '100%',
   },
-  imgViewWrapper:{
-      borderBottomWidth:1.5,
-      width:"100%",
-      alignSelf:'center',
-      paddingBottom:DeviceInfo.hp('1.2%'),
-      marginBottom:DeviceInfo.hp('1.2%')
+  imgViewWrapper: {
+    borderBottomWidth: 1.5,
+    width: '100%',
+    alignSelf: 'center',
+    paddingBottom: DeviceInfo.hp('1.2%'),
+    marginBottom: DeviceInfo.hp('1.2%'),
   },
-  name:{
-      fontFamily:"Poppins-Regular",
-      fontSize:DeviceInfo.hp('1%')
+  name: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: DeviceInfo.hp('1%'),
   },
-  price:{
-      fontFamily:"Poppins-Bold",
-      fontSize:DeviceInfo.hp('1.6%')
-  }
+  price: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: DeviceInfo.hp('1.6%'),
+  },
 });

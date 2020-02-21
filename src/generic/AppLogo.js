@@ -25,7 +25,7 @@ const AppLogo = ({text1, text2, style, textStyle, logoBg}) => {
       <View style={[style ? {...style} : styles.textContainer]}>
         {text1 && <Text style={[styles.text, {...textStyle}]}>{text1}</Text>}
         {text2 && (
-          <Text style={[styles.text, {marginTop: -10}, , {...textStyle}]}>
+          <Text style={[styles.text, {marginTop: -5}, , {...textStyle}]}>
             {text2}
           </Text>
         )}
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   text: {
     color: COLOR.white,
     textAlign: 'center',
-    fontSize: DeviceInfo.hp('2.2%'),
+    fontSize: DeviceInfo.hp('2.1%'),
     fontFamily: 'Poppins-Medium',
   },
 });

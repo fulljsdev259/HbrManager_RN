@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
         marginBottom:DeviceInfo.hp("9%")
     },
     input:{
-        backgroundColor:'rgba(67,68,69,.4)'
+        backgroundColor:'rgba(67,68,69,.4)',
+        fontSize:DeviceInfo.hp("1.6%"),
+        color:COLOR.white
     }
 })

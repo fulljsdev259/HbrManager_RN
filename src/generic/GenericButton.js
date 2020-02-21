@@ -42,8 +42,9 @@ export default GenericButton;
 
 const styles = StyleSheet.create({
     btnText:{
-        paddingVertical:DeviceInfo.hp("1.8%"),
+        paddingVertical:DeviceInfo.hp("1.5%"),
         fontFamily:"Raleway-Medium",
+        fontSize:DeviceInfo.hp("1.5%")
         
     },
     btnView:{

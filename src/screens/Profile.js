@@ -99,13 +99,15 @@ const styles = StyleSheet.create({
         margin:0,
         color:COLOR.white,
         fontFamily:'Raleway-Medium',
+        fontSize:DeviceInfo.hp("1.6%")
     },
     inputContainer:{
         marginBottom:DeviceInfo.hp("3%")
     },
     fieldName:{
         color:COLOR.white,
-        fontFamily:'Raleway-Medium'
+        fontFamily:'Raleway-Bold',
+        fontSize:DeviceInfo.hp("1.6%")
     },
     genericBtn:{
         marginTop:10

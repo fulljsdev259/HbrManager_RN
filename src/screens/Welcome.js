@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     cardWrapper:{
         flexDirection:'row',
         flexWrap:'wrap',
-        width:DeviceInfo.wp("80%"),
+        width:DeviceInfo.wp("74%"),
         alignItems:'center',
         justifyContent:"space-between"
     },
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     },
     cardName:{
         color:COLOR.white,
-        width:"80%",
+        width:"90%",
         fontFamily:'Poppins-Medium'
     },
     nameView:{

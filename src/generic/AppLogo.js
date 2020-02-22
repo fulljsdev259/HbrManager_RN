@@ -1,9 +1,25 @@
 import React, {Component} from 'react';
-import {Text, View, Image, StyleSheet, PixelRatio} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  PixelRatio,
+} from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 
-const AppLogo = ({text1, text2, style, textStyle, logoBg}) => {
+const AppLogo = ({
+  text1,
+  text2,
+  style,
+  textStyle,
+  shop,
+  logoBg,
+  handleText,
+}) => {
+  const shopNowText = '<< Shop';
   return (
     <View>
       <View style={{backgroundColor: logoBg}}>
@@ -22,6 +38,17 @@ const AppLogo = ({text1, text2, style, textStyle, logoBg}) => {
           <View style={styles.yellowLine} />
         </View>
       </View>
+      {shop && (
+        <View style={styles.shopTextView}>
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => {
+              handleText ? handleText() : null;
+            }}>
+            <Text style={styles.shopText}>{shopNowText}</Text>
+          </TouchableOpacity>
+        </View>
+      )}
       <View style={[style ? {...style} : styles.textContainer]}>
         {text1 && <Text style={[styles.text, {...textStyle}]}>{text1}</Text>}
         {text2 && (
@@ -71,5 +98,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: DeviceInfo.hp('2.1%'),
     fontFamily: 'Poppins-Medium',
+  },
+  shopText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: DeviceInfo.hp('1.2%'),
+    width: '80%',
+  },
+  shopTextView: {
+    width: '90%',
+    alignSelf: 'center',
+    paddingTop: DeviceInfo.hp('1.3%'),
   },
 });

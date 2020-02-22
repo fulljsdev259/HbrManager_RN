@@ -206,11 +206,13 @@ export default class ImageCarousel extends Component {
           <AppLogo
             text1="Order contact lenses"
             style={{
-              paddingTop: DeviceInfo.hp('4%'),
+              paddingTop: DeviceInfo.hp('3.8%'),
               //   paddingBottom: DeviceInfo.hp('4%'),
             }}
             textStyle={{color: COLOR.black}}
             logoBg={COLOR.blackBg}
+            shop
+            // handleText={()=>this.props.navigation.back()}
           />
 
           <View style={styles.carouselWrapper}>
@@ -270,7 +272,7 @@ export default class ImageCarousel extends Component {
                       <View
                         style={[
                           styles.dropdownWrapper,
-                          {paddingVertical: list.one ? 0 : 7},
+                          {paddingVertical: list.one ? 0 : 7,height:list.one ? 18 : null},
                         ]}>
                         {!list.one ? (
                           <>
@@ -320,7 +322,10 @@ export default class ImageCarousel extends Component {
             <Text style={[styles.price, styles.totalCharge]}>
               Total - £15.00
             </Text>
-            <GenericButton text="Add to baseket" />
+            <GenericButton 
+                text="Add to baseket"
+                onPress={()=>this.props.navigation.navigate('Basket')}
+              />
             <Text style={styles.descriptionText}>Description</Text>
             <View style={styles.textWrapper}>
               <View style={styles.overlay}>
@@ -443,7 +448,7 @@ const styles = StyleSheet.create({
   descriptionText: {
     fontFamily: 'Poppins-Bold',
     fontSize: DeviceInfo.hp('1.5%'),
-    marginTop: DeviceInfo.hp('1.5%'),
+    marginTop: DeviceInfo.hp('1.8%'),
   },
   contentText: {
     fontFamily: 'Poppins-Light',
@@ -471,7 +476,7 @@ const styles = StyleSheet.create({
   },
   totalCharge: {
     textAlign: 'right',
-    marginVertical: DeviceInfo.hp('1.5%'),
+    marginVertical: DeviceInfo.hp('1.8%'),
   },
   textWrapper: {
     // height:100

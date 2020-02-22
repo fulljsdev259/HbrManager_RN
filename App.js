@@ -27,6 +27,8 @@ import MemberBenefits from './src/screens/MenberBenefits';
 import OderContactLens from './src/screens/OderContactLens';
 import BookAppointment from './src/screens/BookAppointment';
 import LensesDetails from './src/screens/LensesDetails'
+import Basket from './src/screens/Basket';
+import RecentOrders from './src/screens/RecentOrders';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -41,6 +43,20 @@ const App= () => {
       <Stack.Navigator
         initialRouteName="Welcome"
       >
+        <Stack.Screen 
+          name="RecentOrders" 
+          component={RecentOrders}
+          options={
+            {headerShown:false}
+          }
+        />
+        <Stack.Screen 
+          name="Basket" 
+          component={Basket}
+          options={
+            {headerShown:false}
+          }
+        />
         <Stack.Screen 
           name="LensesDetails" 
           component={LensesDetails}

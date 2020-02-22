@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
         marginBottom:DeviceInfo.hp("1.5%"),
         borderRadius:30,
         width:"100%",
-        paddingHorizontal:20
+        paddingHorizontal:20,
+        height:DeviceInfo.hp("5.1%")
     },
     wrapper:{
         width:"80%",

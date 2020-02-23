@@ -8,7 +8,11 @@ const COLOR = {
     black:"#000000",
     lightYellow:"rgba(212,156,57,.6)",
     lightGreen:"rgba(58, 92, 100, .6)",
-    bubble:'#999999'
+    bubble:'#999999',
+    galleryBg:'#fafafa',
+    blue:"#3897f0",
+    blackFade:'rgba(0,0,0,.4)',
+    blackBorder:'rgba(0,0,0,.2)'
 }
 
 export default COLOR;

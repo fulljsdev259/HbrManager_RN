@@ -8,14 +8,6 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Image,
-  TouchableOpacity
 } from 'react-native';
 import Welcome from './src/screens/Welcome';
 import ApplyOrSignin from './src/screens/ApplyOrSignin';
@@ -29,6 +21,8 @@ import BookAppointment from './src/screens/BookAppointment';
 import LensesDetails from './src/screens/LensesDetails'
 import Basket from './src/screens/Basket';
 import RecentOrders from './src/screens/RecentOrders';
+import ContactUs from './src/screens/ContactUs';
+import Gallery from './src/screens/Gallery';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -41,8 +35,22 @@ const App= () => {
     <>
     <NavigationContainer ref={ref}>
       <Stack.Navigator
-        initialRouteName="Welcome"
+        initialRouteName="Gallery"
       >
+        <Stack.Screen 
+          name="Gallery" 
+          component={Gallery}
+          options={
+            {headerShown:false}
+          }
+        />
+        <Stack.Screen 
+          name="ContactUs" 
+          component={ContactUs}
+          options={
+            {headerShown:false}
+          }
+        />
         <Stack.Screen 
           name="RecentOrders" 
           component={RecentOrders}
@@ -133,9 +141,5 @@ const App= () => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-
-});
 
 export default App;

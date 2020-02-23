@@ -49,14 +49,16 @@ const AppLogo = ({
           </TouchableOpacity>
         </View>
       )}
-      <View style={[style ? {...style} : styles.textContainer]}>
-        {text1 && <Text style={[styles.text, {...textStyle}]}>{text1}</Text>}
-        {text2 && (
-          <Text style={[styles.text, {marginTop: -5}, , {...textStyle}]}>
-            {text2}
-          </Text>
-        )}
-      </View>
+      {(text1 || text2) && (
+        <View style={[style ? {...style} : styles.textContainer]}>
+          {text1 && <Text style={[styles.text, {...textStyle}]}>{text1}</Text>}
+          {text2 && (
+            <Text style={[styles.text, {marginTop: -5}, , {...textStyle}]}>
+              {text2}
+            </Text>
+          )}
+        </View>
+      )}
     </View>
   );
 };

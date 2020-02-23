@@ -74,6 +74,8 @@ const BasketCard = ({type}) => {
     return item.length;
   };
 
+  const  _keyExtractor = (item, index) => index;
+
   const data =type ?  [1,1,1,1] : [1, 1, 1,1,1,1,1,1,1];
   return (
     <View>
@@ -82,6 +84,8 @@ const BasketCard = ({type}) => {
         renderItem={_renderItem}
         getItem={_getItem}
         getItemCount={_getItemCount}
+        keyExtractor={_keyExtractor}
+        
       />
     </View>
   );

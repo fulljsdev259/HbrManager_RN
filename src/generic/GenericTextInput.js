@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     textArea:{
-        height:150,
+        height:130,
         borderRadius:20,
         textAlignVertical:'top',
         paddingTop:20

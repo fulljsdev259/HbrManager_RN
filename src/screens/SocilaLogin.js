@@ -37,7 +37,7 @@ const SocilLogin = ({navigation, route}) => {
               isSocial={isFbLogin ? 'fb' : 'google'}
             />
             <View style={styles.wrapper}>
-              <GenericTextInput placeholder="Email" />
+              <GenericTextInput placeholder="Email Address" />
               <GenericButton
                 text="Sign in"
                 style={styles.genericBtn}

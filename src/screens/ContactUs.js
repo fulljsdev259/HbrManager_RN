@@ -130,6 +130,6 @@ const styles = StyleSheet.create({
   },
   genericBtn: {
     marginTop: DeviceInfo.hp('1.2%'),
-    marginBottom: DeviceInfo.hp('6%'),
+    marginBottom: DeviceInfo.hp('5%'),
   },
 });

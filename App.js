@@ -36,7 +36,7 @@ const App= () => {
     <>
     <NavigationContainer ref={ref}>
       <Stack.Navigator
-        initialRouteName="Profile"
+        initialRouteName="Welcome"
       >
         <Stack.Screen 
           name="SocilLogin" 

@@ -8,18 +8,21 @@ import GenericButton from '../generic/GenericButton';
 
 
 const textFeild = ["Patient number", "Black or teal card", "First name", "Last name", "Phone number", "Email", "Repeat email", "Password", "Repeat password" ]
+const changePassword = ['New password', 'Confirm password']
+const ApplyForLc = ({route,navigation})=>{
 
-const ApplyForLc = ({navigation})=>{
+    const isToChangePassword = route.params && route.params && route.params.isToChangePassword
+    const feildsToRender = isToChangePassword ? changePassword : textFeild;
     return(
         <View style={styles.container}>
             <ScrollView>
                 <AppLogo
-                    text1="Apply for a"
-                    text2="loyalty card"
+                    text1={isToChangePassword ? "Change password" : "Apply for a"}
+                    text2={isToChangePassword ? " " : "loyalty card"}
                     style={{paddingTop:DeviceInfo.hp("7%"), paddingBottom:DeviceInfo.hp("4%")}}
                 />
                 {
-                    textFeild.map((item)=>{
+                    feildsToRender.map((item)=>{
                         return(
                             <GenericTextInput
                                 placeholder={item}

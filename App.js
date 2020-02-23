@@ -23,6 +23,7 @@ import Basket from './src/screens/Basket';
 import RecentOrders from './src/screens/RecentOrders';
 import ContactUs from './src/screens/ContactUs';
 import Gallery from './src/screens/Gallery';
+import SocilLogin from './src/screens/SocilaLogin';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -35,8 +36,15 @@ const App= () => {
     <>
     <NavigationContainer ref={ref}>
       <Stack.Navigator
-        initialRouteName="Gallery"
+        initialRouteName="Profile"
       >
+        <Stack.Screen 
+          name="SocilLogin" 
+          component={SocilLogin}
+          options={
+            {headerShown:false}
+          }
+        />
         <Stack.Screen 
           name="Gallery" 
           component={Gallery}

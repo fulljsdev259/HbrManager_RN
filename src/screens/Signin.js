@@ -38,14 +38,14 @@ const SignIn = ({navigation})=>{
                                 text="Continue with Google"
                                 type="google"
                                 style={{marginTop :DeviceInfo.pixel(22)}}
-                                onPress={()=>navigation.navigate("ApplyForLc")}
+                                onPress={()=>navigation.navigate("SocilLogin",{socialLogin:'google'})}
                                 bgColor={COLOR.white}
                             />
                             <GenericButton 
                                 text="Continue with Facebook"
                                 type="fb"
                                 style={styles.genericBtn}
-                                onPress={()=>navigation.navigate("ApplyForLc")}
+                                onPress={()=>navigation.navigate("SocilLogin",{socialLogin:'fb'})}
                                 bgColor={COLOR.white}
                             />
                         </View>

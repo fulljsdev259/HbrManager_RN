@@ -6,64 +6,82 @@ import {
   StyleSheet,
   PixelRatio,
   VirtualizedList,
+  TouchableOpacity,
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 
-const BasketCard = ({type}) => {
+const BasketCard = ({type, onPress}) => {
   const _renderItem = (item, index) => {
     return (
-      <View style={styles.contentView}>
-        <View style={styles.imgView}>
-          <Image
-            resizeMode="contain"
-            style={styles.img}
-            source={require('../../assets/comfi-pure51042-132basket.png')}
-          />
-        </View>
-        <View style={styles.detailsView}>
-          <View style={styles.itemDetailsView}>
-            <View>
-              <Text style={styles.name}>comfi Colors 1 Day</Text>
-              <Text style={styles.itemDetails}>
-                Dapibus mus eros. Leo potenti. Id. Malesuada nulla interdum
-                scelerisque.{' '}
-              </Text>
+      <TouchableOpacity
+      activeOpacity={.5}
+        onPress={() => {
+          onPress ? onPress() : null;
+        }}>
+        <View style={styles.contentView}>
+          <View style={styles.imgView}>
+            <Image
+              resizeMode="contain"
+              style={styles.img}
+              source={require('../../assets/comfi-pure51042-132basket.png')}
+            />
+          </View>
+          <View style={styles.detailsView}>
+            <View style={styles.itemDetailsView}>
+              <View>
+                <Text style={styles.name}>comfi Colors 1 Day</Text>
+                <Text style={styles.itemDetails}>
+                  Dapibus mus eros. Leo potenti. Id. Malesuada nulla interdum
+                  scelerisque.{' '}
+                </Text>
+              </View>
+              <View>
+                <Text style={styles.price}>£7.50</Text>
+              </View>
             </View>
-            <View>
-              <Text style={styles.price}>£7.50</Text>
+            <View
+              style={[
+                styles.deleteView,
+                {justifyContent: type ? 'center' : 'space-evenly'},
+              ]}>
+              <View style={styles.deleteTextView}>
+                <Text style={styles.deleteText}>
+                  {type ? 'Order date' : 'Delete'}
+                </Text>
+                {!type && <View style={styles.underLine} />}
+              </View>
+              {type && (
+                <Text style={[styles.deleteText, {color: COLOR.yellow}]}>
+                  22/2/20
+                </Text>
+              )}
+              {!type && (
+                <View style={styles.totalTextView}>
+                  <Text style={styles.totalView}>1</Text>
+                </View>
+              )}
+              {type && (
+                <View style={styles.deleteTextView}>
+                  <Text style={styles.deleteText}>View order</Text>
+                  <View style={styles.underLine} />
+                </View>
+              )}
+
+              {!type && (
+                <View style={styles.countView}>
+                  <View style={styles.handleCountTextView}>
+                    <Text style={styles.countHandleText}>+</Text>
+                  </View>
+                  <View style={styles.handleCountTextView}>
+                    <Text style={styles.countHandleText}>-</Text>
+                  </View>
+                </View>
+              )}
             </View>
           </View>
-          <View style={[
-              styles.deleteView,
-              {justifyContent:type ? 'center' : 'space-evenly'}
-            ]}>
-            <View style={styles.deleteTextView}>
-                <Text style={styles.deleteText}>{type ? "Order date" :"Delete"}</Text>
-                {!type && <View style={styles.underLine}/>}
-            </View>
-            {type && <Text style={[styles.deleteText,{color:COLOR.yellow}]}>22/2/20</Text>}
-            {!type &&<View style={styles.totalTextView}>
-              <Text style={styles.totalView}>1</Text>
-            </View>
-            } 
-            {type &&<View style={styles.deleteTextView}>
-              <Text style={styles.deleteText}>View order</Text>
-              <View style={styles.underLine}/>
-            </View>
-            } 
-            
-            {!type && <View style={styles.countView}>
-              <View style={styles.handleCountTextView}>
-                <Text style={styles.countHandleText}>+</Text>
-              </View>
-              <View style={styles.handleCountTextView}>
-                <Text style={styles.countHandleText}>-</Text>
-              </View>
-            </View>}
-          </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   const _getItem = (item, index) => {
@@ -74,9 +92,9 @@ const BasketCard = ({type}) => {
     return item.length;
   };
 
-  const  _keyExtractor = (item, index) => index;
+  const _keyExtractor = (item, index) => index;
 
-  const data =type ?  [1,1,1,1] : [1, 1, 1,1,1,1,1,1,1];
+  const data = type ? [1, 1, 1, 1] : [1, 1, 1, 1, 1, 1, 1, 1, 1];
   return (
     <View>
       <VirtualizedList
@@ -85,7 +103,6 @@ const BasketCard = ({type}) => {
         getItem={_getItem}
         getItemCount={_getItemCount}
         keyExtractor={_keyExtractor}
-        
       />
     </View>
   );
@@ -99,9 +116,9 @@ const styles = StyleSheet.create({
     width: '80%',
     alignSelf: 'center',
     alignItems: 'center',
-    borderBottomWidth:1,
-    paddingBottom:DeviceInfo.hp("1.5%"),
-    marginBottom:DeviceInfo.hp("1.5%")
+    borderBottomWidth: 1,
+    paddingBottom: DeviceInfo.hp('1.5%'),
+    marginBottom: DeviceInfo.hp('1.5%'),
   },
   imgView: {
     width: DeviceInfo.width * 0.15,
@@ -142,21 +159,21 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   handleCountTextView: {
-    backgroundColor:COLOR.black,
-    width:DeviceInfo.wp('3.4%'),
-    height:DeviceInfo.wp('3.4%'),
-    justifyContent:'center',
-    alignItems:'center',
-    flexDirection:'row',
-    borderRadius:DeviceInfo.wp('1.8%'),
-    paddingBottom:1.4
+    backgroundColor: COLOR.black,
+    width: DeviceInfo.wp('3.4%'),
+    height: DeviceInfo.wp('3.4%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderRadius: DeviceInfo.wp('1.8%'),
+    paddingBottom: 1.4,
   },
-  countHandleText:{
-    color:COLOR.white,
+  countHandleText: {
+    color: COLOR.white,
     fontSize: DeviceInfo.hp('1.3%'),
   },
   deleteView: {
-    flexDirection:"column",
+    flexDirection: 'column',
   },
   deleteText: {
     fontFamily: 'Poppins-Medium',
@@ -166,18 +183,18 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontSize: DeviceInfo.hp('1.1%'),
   },
-  underLine:{
+  underLine: {
     borderBottomWidth: 1,
-    marginTop:-3
+    marginTop: -3,
   },
-  totalTextView:{
+  totalTextView: {
     borderWidth: 1,
     borderColor: COLOR.yellow,
     paddingHorizontal: DeviceInfo.wp('3.2%'),
-    borderRadius:DeviceInfo.wp('2.5%'),
-    height:DeviceInfo.wp('3.5%'),
-    justifyContent:'center',
-    alignItems:'center',
-    paddingTop:3
-  }
+    borderRadius: DeviceInfo.wp('2.5%'),
+    height: DeviceInfo.wp('3.5%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 3,
+  },
 });

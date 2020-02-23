@@ -5,7 +5,6 @@ import {
   Image,
   StyleSheet,
   TouchableOpacity,
-  PixelRatio,
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -18,8 +17,10 @@ const AppLogo = ({
   shop,
   logoBg,
   handleText,
+  isSocial,
 }) => {
   const shopNowText = '<< Shop';
+  const isFromFb = isSocial && isSocial === 'fb' ? true : false;
   return (
     <View>
       <View style={{backgroundColor: logoBg}}>
@@ -32,6 +33,7 @@ const AppLogo = ({
             />
           </View>
         </View>
+
         <View>
           <View style={styles.yellowLine} />
           <View style={styles.greenLine} />
@@ -49,6 +51,20 @@ const AppLogo = ({
           </TouchableOpacity>
         </View>
       )}
+      <View>
+        {isSocial && (
+          <View style={styles.socialBg}>
+            <Image
+              style={styles.socialImg}
+              source={
+                isFromFb
+                  ? require('../../assets/facebook-icon.png')
+                  : require('../../assets/google.png')
+              }
+            />
+          </View>
+        )}
+      </View>
       {(text1 || text2) && (
         <View style={[style ? {...style} : styles.textContainer]}>
           {text1 && <Text style={[styles.text, {...textStyle}]}>{text1}</Text>}
@@ -110,5 +126,19 @@ const styles = StyleSheet.create({
     width: '90%',
     alignSelf: 'center',
     paddingTop: DeviceInfo.hp('1.3%'),
+  },
+  socialBg: {
+    width: DeviceInfo.width * 0.125,
+    height: DeviceInfo.width * 0.125,
+    backgroundColor: COLOR.white,
+    borderRadius: (DeviceInfo.width * 0.2) / 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: DeviceInfo.hp('5%')
+  },
+  socialImg: {
+    width: 23,
+    height: 23,
   },
 });

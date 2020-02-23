@@ -29,7 +29,7 @@ const RecentOrders = ({navigation}) => {
             shop
             // handleText={()=>this.props.navigation.back()}
           />
-          <BasketCard type="recent" />
+          <BasketCard type="recent" onPress={()=>navigation.navigate('ContactUs')} />
           {/* <View style={styles.wrapper}>
             <Text style={styles.price}>Basket Total - £22.50</Text>
             <GenericButton 

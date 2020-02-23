@@ -23,7 +23,7 @@ const openingTimes = [
   {day: 'Saturday', time: 'Closed'},
 ];
 
-const ContactUs = ({}) => {
+const ContactUs = ({navigation}) => {
   return (
     <View>
       <ImageBackground
@@ -43,7 +43,7 @@ const ContactUs = ({}) => {
               <GenericTextInput placeholder="Name" />
               <GenericTextInput placeholder="Email" />
               <GenericTextInput placeholder="Message" type="text-area" />
-              <GenericButton style={styles.genericBtn} text="Submit" />
+              <GenericButton onPress={()=>navigation.navigate('Gallery')} style={styles.genericBtn} text="Submit" />
               <View style={styles.infoWrapper}>
                 <View style={styles.contentView}>
                   <Text style={styles.mediumText}>

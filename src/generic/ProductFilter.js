@@ -11,6 +11,7 @@ import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {Card} from 'native-base';
 
 const filtersType = [
   'Sort',
@@ -38,21 +39,21 @@ const ProductFilter = ({setFilter}) => {
         />
         <Text style={styles.filterText}>Filters</Text>
       </View>
-      <View style={styles.handleBtns}>
-        <TouchableOpacity style={{width:'35%'}}  activeOpacity={.5}>
+      <Card style={styles.handleBtns}>
+        <TouchableOpacity style={{width: '35%'}} activeOpacity={0.5}>
           <View style={styles.resetView}>
             <Text style={styles.resetText}>RESET ALL</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{width:'62%'}} activeOpacity={.5}>
+        <TouchableOpacity style={{width: '62%'}} activeOpacity={0.5}>
           <View style={styles.applyView}>
             <Text style={styles.applyText}>APPLY FILTERS</Text>
           </View>
         </TouchableOpacity>
-      </View>
+      </Card>
       <View>
         <View style={styles.listContainer}>
-          <View style={styles.cardWrapper}>
+          <Card style={styles.cardWrapper}>
             {filtersType.map((list, i) => {
               return (
                 <TouchableOpacity
@@ -84,8 +85,8 @@ const ProductFilter = ({setFilter}) => {
                 </TouchableOpacity>
               );
             })}
-          </View>
-          <View
+          </Card>
+          <Card
             style={[
               styles.filterOptions,
               {top: filterIndex * DeviceInfo.hp('5.2%')},
@@ -111,7 +112,7 @@ const ProductFilter = ({setFilter}) => {
                 );
               },
             )}
-          </View>
+          </Card>
         </View>
       </View>
     </View>
@@ -126,7 +127,6 @@ const styles = StyleSheet.create({
     zIndex: 100000,
     width: '100%',
     height: '100%',
-    // flex:1,
     backgroundColor: COLOR.white,
   },
   header: {
@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 1,
     elevation: 1,
+
     // borderRightWidth:1
   },
   typeText: {
@@ -172,14 +173,20 @@ const styles = StyleSheet.create({
   handleBtns: {
     position: 'absolute',
     bottom: 0,
-    zIndex: 100,
+    zIndex: 1000,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingBottom: 10,
+    // paddingBottom: 10,
+    // elevation:10,
+    shadowColor: 'transparent',
+    shadowOpacity: 0,
     paddingHorizontal: 6,
     width: '100%',
-    backgroundColor: COLOR.white,
-    // borderWidth:1
+    shadowOffset: {height: 0, width: 0},
+    shadowOpacity: 0,
+    // elevation:0,
+    // backgroundColor:'transparent',
+    borderWidth: 1,
   },
   resetView: {
     width: '100%',
@@ -204,16 +211,18 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     borderRadius: 5,
-    borderWidth:2,
-    borderColor:COLOR.mediumGreen,
+    borderWidth: 2,
+    borderColor: COLOR.mediumGreen,
     padding: 10,
     paddingBottom: 6,
     backgroundColor: COLOR.mediumGreen,
   },
-  lastItem: {},
+  lastItem: {
+    borderBottomWidth: 1,
+  },
   underLine: {
     width: '100%',
-    height: 1,
+    // height: 50,
     marginTop: DeviceInfo.hp('4%'),
     backgroundColor: COLOR.white,
     // shadowColor: '#000',
@@ -232,7 +241,7 @@ const styles = StyleSheet.create({
   filterOptions: {
     position: 'absolute',
     right: 0,
-    width: '65%',
+    width: '63%',
     paddingVertical: 10,
     shadowColor: '#000',
     shadowOffset: {width: 10, height: -1},

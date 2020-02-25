@@ -76,7 +76,7 @@ const Profile = ({navigation}) => {
         <GenericButton
           style={styles.genericBtn}
           text="Recent Orders"
-          onPress={() => navigation.navigate('SignIn')}
+          onPress={() => navigation.navigate('RecentOrders')}
         />
         </>}
         <GenericButton

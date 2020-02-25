@@ -24,6 +24,7 @@ import RecentOrders from './src/screens/RecentOrders';
 import ContactUs from './src/screens/ContactUs';
 import Gallery from './src/screens/Gallery';
 import SocilLogin from './src/screens/SocilaLogin';
+import ProductCategory from './src/screens/ProductCategory';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -38,6 +39,13 @@ const App= () => {
       <Stack.Navigator
         initialRouteName="Welcome"
       >
+        <Stack.Screen 
+          name="ProductCategory" 
+          component={ProductCategory}
+          options={
+            {headerShown:false}
+          }
+        />
         <Stack.Screen 
           name="SocilLogin" 
           component={SocilLogin}

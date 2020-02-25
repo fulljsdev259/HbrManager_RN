@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Text,
   View,
@@ -6,12 +6,13 @@ import {
   StyleSheet,
   ScrollView,
   PixelRatio,
+  TouchableOpacity,
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
-import {color} from 'react-native-reanimated';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import ProductFilter from '../generic/ProductFilter';
 
 export const contactLenses = [
   {
@@ -60,8 +61,21 @@ export const contactLenses = [
 ];
 
 const OderContactLens = ({navigation}) => {
+  const [isFilter, setFilter] = useState(false);
   return (
     <View style={styles.container}>
+      <View style={styles.floatContainer}>
+        <TouchableOpacity activeOpacity={0.5} onPress={() => setFilter(true)}>
+          <View style={styles.floatButton}>
+            <FontAwesome
+              size={22}
+              color={'rgba(255,255,255,.8)'}
+              name="filter"
+            />
+          </View>
+        </TouchableOpacity>
+      </View>
+      {isFilter && <ProductFilter setFilter={() => setFilter()} />}
       <ScrollView>
         <AppLogo
           text1="Order contact lenses"
@@ -76,9 +90,12 @@ const OderContactLens = ({navigation}) => {
           <View style={styles.cardWrapper}>
             {contactLenses.map((list, i) => {
               return (
-                
-                  <View style={styles.card}>
-                    <TouchableOpacity activeOpacity={.5} onPress={()=>navigation.navigate('LensesDetails',{index:i})}>
+                <View key={i} style={styles.card}>
+                  <TouchableOpacity
+                    activeOpacity={0.5}
+                    onPress={() =>
+                      navigation.navigate('LensesDetails', {index: i})
+                    }>
                     <View style={styles.imgViewWrapper}>
                       <View style={styles.imgView}>
                         <Image
@@ -90,9 +107,8 @@ const OderContactLens = ({navigation}) => {
                     </View>
                     <Text style={styles.name}>{list.name}</Text>
                     <Text style={styles.price}>{list.price}</Text>
-                    </TouchableOpacity>
-                  </View>
-                
+                  </TouchableOpacity>
+                </View>
               );
             })}
           </View>
@@ -153,5 +169,23 @@ const styles = StyleSheet.create({
   price: {
     fontFamily: 'Poppins-Bold',
     fontSize: DeviceInfo.hp('1.6%'),
+  },
+  floatButton: {
+    width: DeviceInfo.width * 0.17,
+    height: DeviceInfo.width * 0.17,
+    borderRadius: (DeviceInfo.width * 0.2) / 2,
+    backgroundColor: COLOR.darkGreen,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowOffset: {width: 50, height: 50},
+    shadowColor: 'black',
+    shadowOpacity: 1.0,
+    elevation: 10,
+  },
+  floatContainer: {
+    position: 'absolute',
+    zIndex: 10,
+    right: 20,
+    bottom: 20,
   },
 });

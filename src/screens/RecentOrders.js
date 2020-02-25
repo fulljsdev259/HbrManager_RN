@@ -29,22 +29,7 @@ const RecentOrders = ({navigation}) => {
             shop
             // handleText={()=>this.props.navigation.back()}
           />
-          <BasketCard type="recent" onPress={()=>navigation.navigate('ContactUs')} />
-          {/* <View style={styles.wrapper}>
-            <Text style={styles.price}>Basket Total - £22.50</Text>
-            <GenericButton 
-              style={styles.genericBtn} 
-              text="Proceed to checkout"
-              btnViewStyle={{width:"100%"}}
-            />
-            <View style={styles.continueView}>
-              <Text style={styles.conitnueText}>
-                Continue shopping
-              </Text>
-              <View style={styles.underline}/>
-            </View>
-            
-          </View> */}
+          <BasketCard type="recent" /* onPress={()=>navigation.navigate('ContactUs')} */ />
         </ScrollView>
       </View>
     </View>

@@ -39,9 +39,11 @@ const Basket = ({navigation}) => {
               onPress={()=>navigation.navigate('RecentOrders')}
             />
             <View style={styles.continueView}>
+              <TouchableOpacity onPress={()=>navigation.navigate('OrderContactLens')}  activeOpacity={.5} >
               <Text style={styles.conitnueText}>
                 Continue shopping
               </Text>
+              </TouchableOpacity>
               <View style={styles.underline}/>
             </View>
             

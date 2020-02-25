@@ -12,7 +12,9 @@ const COLOR = {
     galleryBg:'#fafafa',
     blue:"#3897f0",
     blackFade:'rgba(0,0,0,.4)',
-    blackBorder:'rgba(0,0,0,.2)'
+    blackBorder:'rgba(0,0,0,.2)',
+    mediumGreen:'#417c84',
+    offWhite:'rgba(255, 255, 255, .7)'
 }
 
 export default COLOR;

@@ -52,7 +52,7 @@ const cards = [
     ],
     bg: '#39565d',
     offer:"£9",
-    screen:'OderContactLens'
+    screen:'ContactUs'
   },
   {
     title: 'Black Card',

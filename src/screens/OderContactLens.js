@@ -177,9 +177,9 @@ const styles = StyleSheet.create({
     backgroundColor: COLOR.darkGreen,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowOffset: {width: 50, height: 50},
+    shadowOffset: {width: 0, height: 10},
     shadowColor: 'black',
-    shadowOpacity: 1.0,
+    shadowOpacity: .7,
     elevation: 10,
   },
   floatContainer: {

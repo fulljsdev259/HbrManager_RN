@@ -56,7 +56,7 @@ const ProductCategory = ({navigation}) => {
               return (
                 
                   <View key={i} style={styles.card}>
-                    <TouchableOpacity activeOpacity={.5} onPress={()=>navigation.navigate('LensesDetails',{index:i})}>
+                    <TouchableOpacity activeOpacity={.5} onPress={()=>navigation.navigate('OderContactLens',{index:i})}>
                     <View style={styles.imgViewWrapper}>
                       <View style={styles.imgView}>
                         <Image

@@ -33,11 +33,13 @@ import Footer from './src/generic/Footer';
 const ref = React.createRef();
 const Stack = createStackNavigator();
 const App= () => {
+  console.log(ref,'refm');
+  
   return (
     <>
     <NavigationContainer ref={ref}>
       <Stack.Navigator
-        initialRouteName="Welcome"
+        initialRouteName="ApplyForLc"
       >
         <Stack.Screen 
           name="ProductCategory" 
@@ -153,7 +155,7 @@ const App= () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
-    <Footer/>
+    <Footer navigateRef={ref} />
     </>
   );
 };

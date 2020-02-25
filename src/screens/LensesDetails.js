@@ -204,7 +204,7 @@ export default class ImageCarousel extends Component {
       <View style={styles.container}>
         <ScrollView>
           <AppLogo
-            text1="Order contact lenses"
+            text1="Comfi Colors 1 Day"
             style={{
               paddingTop: DeviceInfo.hp('3.8%'),
               //   paddingBottom: DeviceInfo.hp('4%'),

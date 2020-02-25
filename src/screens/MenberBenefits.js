@@ -91,9 +91,9 @@ const MemberBenefits = ({navigation}) => {
           include…..
         </Text>
         <View style={styles.cardWrapper}>
-          {memberCards.map(item => {
+          {memberCards.map((item,i) => {
             return (
-              <View style={[styles.cardView, {marginTop: item.mt}]}>
+              <View key={i} style={[styles.cardView, {marginTop: item.mt}]}>
                 <View style={[styles.offerWrapper, {right: item.right}]}>
                   <View style={[styles.offerView, {backgroundColor: item.bg}]}>
                     <Text style={styles.offerText}>{item.text}</Text>

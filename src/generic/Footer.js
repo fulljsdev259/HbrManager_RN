@@ -5,28 +5,36 @@ import COLOR from '../utiles/color';
 import Icon from 'react-native-vector-icons/AntDesign';
 import DeviceInfo from '../utiles/deviceInfo';
 
-const Footer = ({})=>{
+const Footer = ({navigateRef})=>{
+  console.log(navigateRef,'refrefrefrefref');
+
+  function handleNavigate(navigateTo){
+    if(navigateRef && navigateRef.current){
+      navigateRef.current.navigate(navigateTo)
+    }
+  }
+  
     return(
         <View style={styles.footer}>
-        <TouchableOpacity activeOpacity={.5}>
+        <TouchableOpacity  onPress={()=>handleNavigate('Welcome')} activeOpacity={.5}>
           <View style={styles.imgView}>
             <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_38.png")} />
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={.5}>
+        <TouchableOpacity onPress={()=>handleNavigate('Profile')} activeOpacity={.5}>
           <View style={styles.imgView}>
             <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_35.png")} />
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={.5}>
+        <TouchableOpacity onPress={()=>handleNavigate('ContactUs')} activeOpacity={.5}>
           <View style={styles.imgView}>
             <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_36.png")} />
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={.5}>
+        <TouchableOpacity onPress={()=>handleNavigate('ProductCategory')} activeOpacity={.5}>
           <View style={styles.imgView}>
             <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_67.png")} />
           </View>

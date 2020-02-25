@@ -6,6 +6,7 @@ import {
   StyleSheet,
   PixelRatio,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -39,7 +40,7 @@ const Basket = ({navigation}) => {
               onPress={()=>navigation.navigate('RecentOrders')}
             />
             <View style={styles.continueView}>
-              <TouchableOpacity onPress={()=>navigation.navigate('OrderContactLens')}  activeOpacity={.5} >
+              <TouchableOpacity onPress={()=>navigation.navigate('OderContactLens')}  activeOpacity={.5} >
               <Text style={styles.conitnueText}>
                 Continue shopping
               </Text>

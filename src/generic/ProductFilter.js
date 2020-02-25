@@ -93,7 +93,7 @@ const ProductFilter = ({setFilter}) => {
             {['Price - Low to High', 'Price - High to Low', 'Newest First'].map(
               (list, i) => {
                 return (
-                  <View style={styles.listWrapper}>
+                  <View key={i} style={styles.listWrapper}>
                     <Text style={styles.listItemName}>{list}</Text>
                     <TouchableOpacity
                       onPress={() => setDefaultValue(i)}

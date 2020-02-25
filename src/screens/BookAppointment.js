@@ -63,7 +63,7 @@ const appointments = [
   },
 ];
 
-const BookAppointment = ({text1, text2, style}) => {
+const BookAppointment = ({}) => {
   return (
     <View>
         <ScrollView>
@@ -79,7 +79,7 @@ const BookAppointment = ({text1, text2, style}) => {
       <View style={styles.wrapper}>
       {appointments.map((list, i) => {
         return (
-          <Collapse>
+          <Collapse key={i}>
             <CollapseHeader>
             <View style={styles.seperator} />
               <View style={styles.headerView}>

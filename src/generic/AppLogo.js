@@ -5,6 +5,9 @@ import {
   Image,
   StyleSheet,
   TouchableOpacity,
+  StatusBar,
+  SafeAreaView,
+  Platform
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -21,8 +24,9 @@ const AppLogo = ({
 }) => {
   const shopNowText = '<< Shop';
   const isFromFb = isSocial && isSocial === 'fb' ? true : false;
+  console.log(StatusBar.currentHeight,'android')
   return (
-    <View>
+    <View style={styles.container}>
       <View style={{backgroundColor: logoBg}}>
         <View style={styles.applogoView}>
           <View style={styles.applogoWrapper}>
@@ -82,6 +86,9 @@ const AppLogo = ({
 export default AppLogo;
 
 const styles = StyleSheet.create({
+  container:{
+    paddingTop:DeviceInfo.deviceDeepInfo.hasNotch() && Platform.OS ==='ios' ? DeviceInfo.hp('3.7%') : 0
+  },  
   applogo: {
     width: '100%',
     height: '100%',

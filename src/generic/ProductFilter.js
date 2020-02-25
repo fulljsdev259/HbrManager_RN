@@ -157,8 +157,8 @@ const styles = StyleSheet.create({
   },
   typeText: {
     width: '98%',
-    fontFamily: 'Poppins-Medium',
-    fontSize: DeviceInfo.hp('1.6%'),
+    fontFamily: 'Raleway-Medium',
+    // fontSize: DeviceInfo.hp('1.6%'),
   },
   typeView: {
     width: '100%',
@@ -216,11 +216,11 @@ const styles = StyleSheet.create({
     height: 1,
     marginTop: DeviceInfo.hp('4%'),
     backgroundColor: COLOR.white,
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 1,
-    shadowRadius: 5,
-    elevation: 2,
+    // shadowColor: '#000',
+    // shadowOffset: {width: 0, height: 2},
+    // shadowOpacity: 1,
+    // shadowRadius: 5,
+    // elevation: 2,
   },
   checkboxView: {
     width: DeviceInfo.width * 0.05,

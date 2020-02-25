@@ -7,6 +7,7 @@ import {
   ScrollView,
   PixelRatio,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -179,7 +180,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     shadowOffset: {width: 0, height: 10},
     shadowColor: 'black',
-    shadowOpacity: .7,
+    shadowOpacity: Platform.OS === 'ios' ? .7 : 1,
     elevation: 10,
   },
   floatContainer: {

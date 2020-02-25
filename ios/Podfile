@@ -37,6 +37,8 @@ target 'HbrManager' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
   target 'HbrManagerTests' do
     inherit! :search_paths
     # Pods for testing

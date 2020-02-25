@@ -2,7 +2,7 @@ const COLOR = {
     yellow:'#d49b20',
     darkGreen:"#3a5c64",
     blackBg:"#2b2a2a",
-    white:"#fff",
+    white:"#f5f5f5",
     overlay:'rgba(000, 000, 000, 0.6)',
     textFieldBg:'rgba(255, 255, 255, .13)',
     black:"#000000",

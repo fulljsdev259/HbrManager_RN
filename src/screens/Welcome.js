@@ -8,27 +8,33 @@ import DeviceInfo from '../utiles/deviceInfo';
 const loyaltyCard = [
     {
         "name":"Account",
-        "img":require("../../assets/APPLY_FOR_LOYALTY_CARD.png")
+        "img":require("../../assets/APPLY_FOR_LOYALTY_CARD.png"),
+        navigateTo:'ApplyOrSignin'
     },
     {
         "name":"Members Benefits",
-        "img":require("../../assets/PROFILE_PAGE.png")
+        "img":require("../../assets/PROFILE_PAGE.png"),
+        navigateTo:'MemberBenefits'
     },
     {
         "name":"Book An Appointment",
-        "img":require("../../assets/SIGN_IN_AND_APPLY_PAGE_APPOINT.png")
+        "img":require("../../assets/SIGN_IN_AND_APPLY_PAGE_APPOINT.png"),
+        navigateTo:'BookAppointment'
     },
     {
         "name":"Order Contact Lenses",
-        "img":require("../../assets/BOOK_APPOINTMENT.png")
+        "img":require("../../assets/BOOK_APPOINTMENT.png"),
+        navigateTo:'ProductCategory'
     },
     {
         "name":"Get Loyalty Card",
-        "img":require("../../assets/CONTACT_LENSE_PAGE.png")
+        "img":require("../../assets/CONTACT_LENSE_PAGE.png"),
+        navigateTo:'ApplyForLc'
     },
     {
         "name":"Frames of the Moment",
-        "img":require("../../assets/WELCOME_MESSAGE_AFTER_APPLY.png")
+        "img":require("../../assets/WELCOME_MESSAGE_AFTER_APPLY.png"),
+        navigateTo:'OderContactLens'
     },
 ]
 
@@ -49,7 +55,7 @@ const Welcome = ({navigation})=>{
                     {loyaltyCard.map((list,i)=>{
                         return(
                             <View key={i} style={styles.card}>
-                                <TouchableOpacity onPress={()=>navigation.navigate("ApplyOrSignin")} activeOpacity={.5}>
+                                <TouchableOpacity onPress={()=>navigation.navigate(list.navigateTo)} activeOpacity={.5}>
                                     <View style={styles.nameView}>
                                         <Text style={styles.cardName}>{list.name}</Text>
                                     </View>

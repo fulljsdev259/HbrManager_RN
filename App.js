@@ -39,7 +39,7 @@ const App= () => {
     <>
     <NavigationContainer ref={ref}>
       <Stack.Navigator
-        initialRouteName="ApplyForLc"
+        initialRouteName="Welcome"
       >
         <Stack.Screen 
           name="ProductCategory" 

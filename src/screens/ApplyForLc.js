@@ -16,6 +16,7 @@ import GenericTextInput from '../generic/GenericTextInput';
 import GenericButton from '../generic/GenericButton';
 import {Picker, Form, Content, Icon} from 'native-base';
 
+
 const textFeild = [
   'Patient number',
   'Black or teal card',

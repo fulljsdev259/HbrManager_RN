@@ -41,9 +41,9 @@ const SocilLogin = ({navigation, route}) => {
               <GenericButton
                 text="Sign in"
                 style={styles.genericBtn}
-                // onPress={() =>
-                //   navigation.navigate('SocilLogin', {socialLogin: 'fb'})
-                // }
+                onPress={() =>
+                  navigation.navigate('Profile')
+                }
               />
             </View>
           </ScrollView>

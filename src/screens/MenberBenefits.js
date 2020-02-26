@@ -52,7 +52,7 @@ const cards = [
     ],
     bg: '#39565d',
     offer:"£9",
-    screen:'ContactUs'
+    screen:'ApplyForLc'
   },
   {
     title: 'Black Card',
@@ -69,7 +69,7 @@ const cards = [
     bg: '#272727',
     style:{marginTop:DeviceInfo.hp("4.4%")},
     offer:"£15",
-    screen:"BookAppointment"
+    screen:"ApplyForLc"
   },
 ];
 

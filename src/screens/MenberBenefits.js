@@ -136,7 +136,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     textAlign: 'center',
     fontSize: DeviceInfo.hp('1.9%'),
-    // marginTop:DeviceInfo.pixel(20)
   },
   imageView: {
     width: '65%',
@@ -151,25 +150,19 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   cardView: {
-    // borderWidth:1,
     width: '100%',
-    // justifyContent:"flex-end"
   },
   offerWrapper: {
     position: 'absolute',
     zIndex: 1000,
     height: '100%',
     width: '55%',
-    // right:0,
     flexDirection: 'column',
     justifyContent: 'center',
-    // borderWidth:1
   },
   offerView: {
     width: '100%',
-    // alignSelf:"center",
     height: '80%',
-    // backgroundColor:'rgba(212,156,57,.6)',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -178,7 +171,6 @@ const styles = StyleSheet.create({
     color: COLOR.white,
     fontFamily: 'Raleway-Bold',
     width: '80%',
-    // fontWeight:"bold",
     alignSelf: 'center',
     textAlign: 'center',
     fontSize: DeviceInfo.pixel(7),

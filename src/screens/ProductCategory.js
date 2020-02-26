@@ -82,8 +82,6 @@ export default ProductCategory;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // backgroundColor: COLOR.blackBg,
   },
   cardWrapper: {
     flexDirection: 'row',

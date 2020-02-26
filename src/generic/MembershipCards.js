@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
     borderColor: COLOR.yellow,
     alignSelf: 'center',
     paddingHorizontal: 20,
-    // padding:DeviceInfo.hp("1.5%")
   },
   title: {
     color: COLOR.white,

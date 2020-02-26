@@ -207,12 +207,10 @@ export default class ImageCarousel extends Component {
             text1="Comfi Colors 1 Day"
             style={{
               paddingTop: DeviceInfo.hp('3.8%'),
-              //   paddingBottom: DeviceInfo.hp('4%'),
             }}
             textStyle={{color: COLOR.black}}
             logoBg={COLOR.blackBg}
             shop
-            // handleText={()=>this.props.navigation.back()}
           />
 
           <View style={styles.carouselWrapper}>
@@ -223,9 +221,7 @@ export default class ImageCarousel extends Component {
               data={this.state.entries}
               renderItem={this._renderItem}
               sliderWidth={sliderWidth}
-              //   sliderHeight={100}
               itemWidth={itemWidth}
-              //   itemHeight={200}
               firstItem={this.state.activeSlide}
               inactiveSlideScale={0.94}
               inactiveSlideOpacity={0.7}
@@ -314,10 +310,6 @@ export default class ImageCarousel extends Component {
                 );
               })}
 
-              {/* <ModalDropdown
-                style={{backgroundColor:"red"}}
-                defaultValue={<Text>dvsdvsvd</Text>}
-                show={false} options={['option  jbf kjasbfa sfkjabsf1', 'option 2']}/> */}
             </View>
             <Text style={[styles.price, styles.totalCharge]}>
               Total - £15.00
@@ -329,7 +321,6 @@ export default class ImageCarousel extends Component {
             <Text style={styles.descriptionText}>Description</Text>
             <View style={styles.textWrapper}>
               <View style={styles.overlay}>
-                {/* <Text style={styles.readmore}>>> Read more</Text> */}
               </View>
               <Text style={styles.contentText}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -348,10 +339,8 @@ export default class ImageCarousel extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    // width:
   },
   carouselWrapper: {
-    // height: 100,
     width: '85%',
     alignSelf: 'center',
   },
@@ -364,8 +353,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     zIndex: -10,
     bottom: 50,
-    // borderWidth: 5,
-    // borderColor: COLOR.PARENTVIEW,
     backgroundColor: 'black',
   },
   arrowView: {
@@ -411,7 +398,6 @@ const styles = StyleSheet.create({
   dropdownWrapper: {
     borderWidth: 1.3,
     borderColor: COLOR.yellow,
-    // height:DeviceInfo.hp("2%"),
     flexDirection: 'row',
     justifyContent: 'center',
     width: DeviceInfo.wp('30%'),
@@ -470,22 +456,18 @@ const styles = StyleSheet.create({
     fontSize: DeviceInfo.hp('1.5%'),
   },
   curve: {
-    //   lineHeight:12
     fontSize: 10,
-    //   fontFamily:'Poppins-Regular'
   },
   totalCharge: {
     textAlign: 'right',
     marginVertical: DeviceInfo.hp('1.8%'),
   },
   textWrapper: {
-    // height:100
   },
   overlay: {
     width: '100%',
     height: '40%',
     position: 'absolute',
-    // backgroundColor: 'rgba(255,255,255,.3)',
     bottom: 0,
     zIndex: 100,
     shadowOffset:{  width: 300,  height: 10,  },

@@ -113,8 +113,6 @@ export default BookAppointment;
 
 const styles = StyleSheet.create({
     wrapper:{
-        // width:'90%',
-        // flexDirection:'row',
         justifyContent:'center'
     },
     rowView:{
@@ -153,7 +151,6 @@ const styles = StyleSheet.create({
     },
     title:{
         fontFamily:'Raleway-Bold'
-        // fontWeight:'700'
     },
     appointmentName:{
         marginRight:DeviceInfo.hp("1.2%"),
@@ -162,7 +159,6 @@ const styles = StyleSheet.create({
         
     },
     charge:{
-        // marginLeft:10,
         fontSize:DeviceInfo.hp("1.1%")
     }
 });

@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
     container:{
         backgroundColor:COLOR.blackBg,
         flex:1,
-        // paddingBottom:DeviceInfo.width*.3
     },
     cardWrapper:{
         flexDirection:'row',
@@ -97,7 +96,6 @@ const styles = StyleSheet.create({
         width:"48%",
         height:DeviceInfo.hp("17.5%"),
         marginBottom:7,
-        // borderRadius:10
     },
     cardContainer:{
         flexDirection:'row',

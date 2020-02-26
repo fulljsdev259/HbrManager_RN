@@ -139,7 +139,6 @@ const styles = StyleSheet.create({
     right: 0,
     alignItems:'center',
     flexDirection:'column',
-    // borderWidth:1,
     height:"100%"
   },
   editText: {

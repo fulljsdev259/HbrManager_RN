@@ -123,8 +123,6 @@ export default OderContactLens;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // backgroundColor: COLOR.blackBg,
   },
   cardWrapper: {
     flexDirection: 'row',
@@ -150,7 +148,6 @@ const styles = StyleSheet.create({
     width: '88%',
     alignSelf: 'center',
     height: DeviceInfo.hp('8.5%'),
-    //   borderBottomWidth:2
   },
   img: {
     width: '100%',

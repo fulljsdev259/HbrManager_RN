@@ -65,9 +65,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   wrapper: {
-    // width:"100%",
-    // fle
-    // alignSelf:'center'
   },
   genericBtn: {
     marginTop: DeviceInfo.hp('1.6%'),

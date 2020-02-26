@@ -153,13 +153,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 1,
     elevation: 1,
-
-    // borderRightWidth:1
   },
   typeText: {
     width: '98%',
     fontFamily: 'Raleway-Medium',
-    // fontSize: DeviceInfo.hp('1.6%'),
   },
   typeView: {
     width: '100%',
@@ -167,8 +164,6 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
   },
   listContainer: {
-    // borderWidth: 1,
-    // flexDirection:'row'
   },
   handleBtns: {
     position: 'absolute',
@@ -176,16 +171,12 @@ const styles = StyleSheet.create({
     zIndex: 1000,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // paddingBottom: 10,
-    // elevation:10,
     shadowColor: 'transparent',
     shadowOpacity: 0,
     paddingHorizontal: 6,
     width: '100%',
     shadowOffset: {height: 0, width: 0},
     shadowOpacity: 0,
-    // elevation:0,
-    // backgroundColor:'transparent',
     borderWidth: 1,
   },
   resetView: {
@@ -222,14 +213,8 @@ const styles = StyleSheet.create({
   },
   underLine: {
     width: '100%',
-    // height: 50,
     marginTop: DeviceInfo.hp('4%'),
     backgroundColor: COLOR.white,
-    // shadowColor: '#000',
-    // shadowOffset: {width: 0, height: 2},
-    // shadowOpacity: 1,
-    // shadowRadius: 5,
-    // elevation: 2,
   },
   checkboxView: {
     width: DeviceInfo.width * 0.05,
@@ -248,7 +233,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 5,
     elevation: 2,
-    // borderWidth: 1,
   },
   listWrapper: {
     flexDirection: 'row',

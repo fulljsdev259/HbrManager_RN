@@ -18,25 +18,25 @@ const Footer = ({navigateRef})=>{
         <View style={styles.footer}>
         <TouchableOpacity  onPress={()=>handleNavigate('Welcome')} activeOpacity={.5}>
           <View style={styles.imgView}>
-            <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_38.png")} />
+            <Image resizeMode="contain" style={styles.img} source={require("../../assets/footer/Group_38.png")} />
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>handleNavigate('Profile')} activeOpacity={.5}>
           <View style={styles.imgView}>
-            <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_35.png")} />
+            <Image resizeMode="contain" style={styles.img} source={require("../../assets/footer/Group_35.png")} />
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>handleNavigate('ContactUs')} activeOpacity={.5}>
           <View style={styles.imgView}>
-            <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_36.png")} />
+            <Image resizeMode="contain" style={styles.img} source={require("../../assets/footer/Group_36.png")} />
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>handleNavigate('ProductCategory')} activeOpacity={.5}>
           <View style={styles.imgView}>
-            <Image resizeMode="center" style={styles.img} source={require("../../assets/footer/Group_67.png")} />
+            <Image resizeMode="contain" style={styles.img} source={require("../../assets/footer/Group_67.png")} />
           </View>
         </TouchableOpacity>
     </View>
@@ -48,8 +48,8 @@ export default Footer;
 
 const styles = StyleSheet.create({
     imgView:{
-        width:DeviceInfo.wp("6.8%"),
-        height:DeviceInfo.wp("6.8%")
+        width:DeviceInfo.wp("7%"),
+        height:DeviceInfo.wp("7%")
       },
       img:{
         width:'100%',

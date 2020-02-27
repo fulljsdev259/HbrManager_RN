@@ -15,7 +15,9 @@ import AppLogo from '../generic/AppLogo';
 import GenericTextInput from '../generic/GenericTextInput';
 import GenericButton from '../generic/GenericButton';
 import {Picker, Form, Content, Icon} from 'native-base';
+// https://i.diawi.com/aDGouu
 
+console.log(DeviceInfo.height,'kkkk')
 
 const textFeild = [
   'Patient number',
@@ -59,10 +61,10 @@ const ApplyForLc = ({route, navigation}) => {
                         iosIcon={
                           <Icon
                             name="arrow-down"
-                            style={{color: COLOR.yellow}}
+                            style={{color: COLOR.yellow, ...styles.pb}}
                           />
                         }
-                        style={{width: undefined, color: COLOR.white}}
+                        style={{width: undefined, color: COLOR.white,...styles.pb}}
                         selectedValue={card}
                         placeholder="Select card"
                         textStyle={{
@@ -153,7 +155,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: 'rgba(67,68,69,.4)',
     marginBottom: DeviceInfo.hp('1.5%'),
-    paddingLeft: 10,
+    paddingLeft: DeviceInfo.height < 700 ? 5 : 10,
     height: DeviceInfo.hp('5.1%'),
   },
   dropIconView: {
@@ -165,4 +167,7 @@ const styles = StyleSheet.create({
     width: '10%',
     height: DeviceInfo.hp('5.1%'),
   },
+  pb:{
+    paddingBottom:DeviceInfo.height < 700 ? 14 :4
+  }
 });

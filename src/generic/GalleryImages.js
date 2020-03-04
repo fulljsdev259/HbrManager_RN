@@ -22,9 +22,7 @@ const images =[
 ]
 
 const GalleryImages = ({text1, text2, style})=>{
-  const  _renderItem=({item,index})=>{
-      console.log();
-      
+  const  _renderItem=({item,index})=>{      
         return(
             <View style={[styles.imgView,{marginRight:index+1*3 ? 2 : 0   }]}>
                 <Image style={styles.img} source={item} />

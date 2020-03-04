@@ -7,6 +7,7 @@ import {
   ScrollView,
   PixelRatio,
   ImageBackground,
+  TouchableOpacity
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -43,7 +44,7 @@ const ContactUs = ({navigation}) => {
               <GenericTextInput placeholder="Name" />
               <GenericTextInput placeholder="Email" />
               <GenericTextInput placeholder="Message" type="text-area" />
-              <GenericButton onPress={()=>navigation.navigate('Gallery')} style={styles.genericBtn} text="Submit" />
+              <GenericButton /* onPress={()=>navigation.navigate('Gallery')} */ style={styles.genericBtn} text="Submit" />
               <View style={styles.infoWrapper}>
                 <View style={styles.contentView}>
                   <Text style={styles.mediumText}>
@@ -56,7 +57,9 @@ const ContactUs = ({navigation}) => {
                 <View style={styles.contentView}>
                   <View style={styles.contactInfoView}>
                     <Text style={styles.boldText}>Phone: </Text>
-                    <Text style={styles.mediumText}>0207 600 9861</Text>
+                    <TouchableOpacity activeOpacity={.5}>
+                      <Text style={styles.mediumText}>0207 600 9861</Text>
+                    </TouchableOpacity> 
                   </View>
                   <View style={styles.contactInfoView}>
                     <Text style={styles.boldText}>Fax: </Text>
@@ -64,9 +67,11 @@ const ContactUs = ({navigation}) => {
                   </View>
                   <View style={styles.contactInfoView}>
                     <Text style={styles.boldText}>Email: </Text>
-                    <Text style={styles.mediumText}>
-                      reception@hoddbarnesdickins.com
-                    </Text>
+                    <TouchableOpacity activeOpacity={.5}>
+                      <Text style={styles.mediumText}>
+                        reception@hoddbarnesdickins.com
+                      </Text>
+                    </TouchableOpacity>
                   </View>
                 </View>
                 <View style={styles.contentView}>

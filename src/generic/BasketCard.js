@@ -7,6 +7,7 @@ import {
   PixelRatio,
   VirtualizedList,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -32,7 +33,7 @@ const BasketCard = ({type, onPress}) => {
               <View>
                 <Text style={styles.name}>comfi Colors 1 Day</Text>
                 <Text style={styles.itemDetails}>
-                  Dapibus mus eros. Leo potenti. Id. Malesuada nulla interdum
+                  Dapibus mus eros. Leo potenti. Id Malesuada nulla interdum
                   scelerisque.{' '}
                 </Text>
               </View>
@@ -46,23 +47,23 @@ const BasketCard = ({type, onPress}) => {
                 {justifyContent: type ? 'center' : 'space-evenly'},
               ]}>
               <View style={styles.deleteTextView}>
-                <Text style={styles.deleteText}>
+                <Text style={[styles.deleteText, type ? styles.mb : {}, Platform.OS === 'ios' && DeviceInfo.height < 700 && {marginBottom:3}]}>
                   {type ? 'Order date' : 'Delete'}
                 </Text>
-                {!type && <View style={styles.underLine} />}
+                {!type && <View style={[styles.underLine,styles.mb,styles.underLineForBasket]} />}
               </View>
               {type && (
-                <Text style={[styles.deleteText, {color: COLOR.yellow}]}>
+                <Text style={[styles.deleteText,styles.mb, Platform.OS === 'ios' && DeviceInfo.height < 700 && {marginBottom:3}, {color: COLOR.yellow}]}>
                   22/2/20
                 </Text>
               )}
               {!type && (
-                <View style={styles.totalTextView}>
+                <View style={[styles.totalTextView,styles.mb, Platform.OS === 'ios' && DeviceInfo.height < 700 && {marginBottom:3}]}>
                   <Text style={styles.totalView}>1</Text>
                 </View>
               )}
               {type && (
-                <View style={styles.deleteTextView}>
+                <View style={[styles.deleteTextView]}>
                   <Text style={styles.deleteText}>View order</Text>
                   <View style={styles.underLine} />
                 </View>
@@ -71,10 +72,13 @@ const BasketCard = ({type, onPress}) => {
               {!type && (
                 <View style={styles.countView}>
                   <View style={styles.handleCountTextView}>
-                    <Text style={styles.countHandleText}>+</Text>
+                    <Image source={require('../../assets/more.png')} style={{width:'100%', height:'100%'}} />
+                    {/* <Text  style={styles.countHandleText}>+</Text> */}
                   </View>
+                  <View style={{width:5}} />
                   <View style={styles.handleCountTextView}>
-                    <Text style={styles.countHandleText}>-</Text>
+                  <Image source={require('../../assets/less.png')} style={{width:'100%', height:'100%'}} />
+                    {/* <Text style={styles.countHandleText}>-</Text> */}
                   </View>
                 </View>
               )}
@@ -113,7 +117,8 @@ export default BasketCard;
 const styles = StyleSheet.create({
   contentView: {
     flexDirection: 'row',
-    width: '80%',
+    width: '92%',
+    // borderWidth:1,
     alignSelf: 'center',
     alignItems: 'center',
     borderBottomWidth: 1,
@@ -121,8 +126,8 @@ const styles = StyleSheet.create({
     marginBottom: DeviceInfo.hp('1.5%'),
   },
   imgView: {
-    width: DeviceInfo.width * 0.15,
-    height: DeviceInfo.width * 0.15,
+    width: DeviceInfo.width * 0.19,
+    height: DeviceInfo.width * 0.19,
     borderWidth: 1,
     borderColor: COLOR.yellow,
     borderRadius: 10,
@@ -136,65 +141,83 @@ const styles = StyleSheet.create({
   detailsView: {
     flexDirection: 'row',
     flex: 1,
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
+    paddingHorizontal:20,
+    // borderWidth:1
   },
   name: {
     fontFamily: 'Poppins-Regular',
-    fontSize: DeviceInfo.hp('1.5%'),
+    fontSize: DeviceInfo.hp('1.63%'),
   },
   itemDetails: {
+    // borderWidth:1,
+    // flex:1,
+
     fontFamily: 'Poppins-Light',
-    fontSize: DeviceInfo.hp('.9%'),
+    fontSize: DeviceInfo.hp('1.2%'),
   },
   price: {
     fontFamily: 'Poppins-Bold',
-    fontSize: DeviceInfo.hp('1.3%'),
+    fontSize: DeviceInfo.hp('1.4%'),
   },
   itemDetailsView: {
-    width: DeviceInfo.wp('40%'),
+    // borderWidth:1,
+    width: DeviceInfo.wp('50%'),
     justifyContent: 'space-between',
   },
   countView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    // borderWidth:1
   },
   handleCountTextView: {
-    backgroundColor: COLOR.black,
-    width: DeviceInfo.wp('3.4%'),
-    height: DeviceInfo.wp('3.4%'),
+    // backgroundColor: COLOR.black,
+    width: DeviceInfo.wp('5%'),
+    height: DeviceInfo.wp('5%'),
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    borderRadius: DeviceInfo.wp('1.8%'),
-    paddingBottom: 1.4,
+    borderRadius: DeviceInfo.wp('2.5%'),
   },
   countHandleText: {
-    color: COLOR.white,
-    fontSize: DeviceInfo.hp('1.3%'),
+    color: COLOR.white, 
+    fontSize: DeviceInfo.hp('2.5%'),
+    includeFontPadding:false,
+    textAlignVertical:'center'
   },
   deleteView: {
     flexDirection: 'column',
   },
   deleteText: {
     fontFamily: 'Poppins-Medium',
-    fontSize: DeviceInfo.hp('1.1%'),
+    fontSize: DeviceInfo.hp('1.3%'),
+    alignSelf:'center'
   },
   totalView: {
     fontFamily: 'Poppins-Medium',
-    fontSize: DeviceInfo.hp('1.1%'),
+    fontSize: DeviceInfo.hp('1.2%'),
+    includeFontPadding:false,
+    // textAlignVertical:'center'
   },
   underLine: {
     borderBottomWidth: 1,
-    marginTop: -3,
+    marginTop:Platform.OS ==='ios' ? 0 : -2,
+  },
+  underLineForBasket:{
+    width:'85%',
+    alignSelf:'center'
   },
   totalTextView: {
     borderWidth: 1,
     borderColor: COLOR.yellow,
     paddingHorizontal: DeviceInfo.wp('3.2%'),
     borderRadius: DeviceInfo.wp('2.5%'),
-    height: DeviceInfo.wp('3.5%'),
+    height: DeviceInfo.wp('4%'),
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 3,
+    // paddingTop: 3,
   },
+  mb:{
+    marginBottom:5
+  }
 });

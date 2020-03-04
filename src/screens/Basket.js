@@ -6,7 +6,8 @@ import {
   StyleSheet,
   PixelRatio,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   },
   underline:{
     borderBottomWidth:1,
-    marginTop:-3,
+    marginTop:Platform.OS === 'ios' ? 0 : -2,
   },
   continueView:{
     alignSelf:'center'

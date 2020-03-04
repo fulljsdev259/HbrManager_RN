@@ -33,7 +33,7 @@ const textFeild = [
 const changePassword = ['New password', 'Confirm password'];
 
 const ApplyForLc = ({route, navigation}) => {
-  const [card, setCard] = useState('');
+  const [card, setCard] = useState('Select card');
   const isToChangePassword =
     route.params && route.params && route.params.isToChangePassword;
   const feildsToRender = isToChangePassword ? changePassword : textFeild;
@@ -70,6 +70,7 @@ const ApplyForLc = ({route, navigation}) => {
                         textStyle={{
                           color: COLOR.white,
                           fontSize: DeviceInfo.hp('1.6%'),
+                          fontFamily: 'Poppins-Regular'
                         }}
                         itemTextStyle={{
                           color: COLOR.black,
@@ -90,15 +91,21 @@ const ApplyForLc = ({route, navigation}) => {
             } else {
               return (
                 <View key={i} style={styles.pickerView}>
+                  <View style={styles.pickerDefaultTextView}>
+                    <Text style={styles.pickerDefaultText}>
+                      {card}
+                    </Text>
+                    </View>
                   <Picker
                     selectedValue={card}
                     style={styles.picker}
+                    textStyle={{color:'red'}}
                     onValueChange={(itemValue, itemIndex) =>
                       setCard(itemValue)
                     }>
-                    <Picker.Item label="Select card" value="" />
-                    <Picker.Item label="Black" value="black" />
-                    <Picker.Item label="Teal" value="teal" />
+                    <Picker.Item label="Select card" value="Select card" />
+                    <Picker.Item label="Black" value="Black" />
+                    <Picker.Item label="Teal" value="Teal" />
                   </Picker>
                   <View style={styles.dropIconView}>
                     <Image
@@ -140,6 +147,18 @@ const styles = StyleSheet.create({
     fontSize: DeviceInfo.hp('1.6%'),
     color: COLOR.white,
   },
+  pickerDefaultTextView:{
+    position:'absolute',
+    height: DeviceInfo.hp('5.1%'),
+    justifyContent:'center',
+    flexDirection:'column',
+    alignItems:'center',
+    paddingLeft:20
+  },
+  pickerDefaultText:{
+    fontSize: DeviceInfo.hp('1.6%'),
+    color: COLOR.white,
+  },
   picker: {
     height: DeviceInfo.hp('5.1%'),
     color: COLOR.white,
@@ -148,6 +167,7 @@ const styles = StyleSheet.create({
     transform: [{scaleX: 0.9}, {scaleY: 0.9}],
     borderWidth: 4,
     marginLeft: -23,
+    opacity:0
   },
   pickerView: {
     width: '80%',

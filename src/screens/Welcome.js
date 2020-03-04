@@ -34,7 +34,7 @@ const loyaltyCard = [
     {
         "name":"Frames of the Moment",
         "img":require("../../assets/WELCOME_MESSAGE_AFTER_APPLY.png"),
-        navigateTo:'OderContactLens'
+        navigateTo:'Gallery'
     },
 ]
 

@@ -15,25 +15,26 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export const contactLenses = [
   {
-    img: require('../../assets/contact-lenses/Blink-N-Clean-Eye-Drops.png'),
+    img: require('../../assets/product-category/bio-true.jpg'),
     name: 'comfi Colors 1 Day',
     price: '£7.50',
   },
   {
-    img: require('../../assets/contact-lenses/comfi-pure51042-132.png'),
+    img: require('../../assets/product-category/clariti.jpg'),
     name: 'comfi Colors 1 Day',
     price: '£7.50',
   },
   {
-    img: require('../../assets/contact-lenses/blink-n-clean-eye-drops788-131.png'),
+    img: require('../../assets/product-category/Acuvue.jpg'),
     name: 'Blink-N-Clean Eye Drops',
     price: '£3.99',
-    resizeMode: 'contain',
+    resizeMode:'cover',
   },
   {
-    img: require('../../assets/contact-lenses/dailies-total-1786-131.png'),
+    img: require('../../assets/product-category/Dailies.jpg'),
     name: 'Dailies Total 1',
     price: '£3.99',
+    resizeMode:'cover',
   },
 ];
 
@@ -42,7 +43,7 @@ const ProductCategory = ({navigation}) => {
     <View style={styles.container}>
       <ScrollView>
         <AppLogo
-          text1="Contact lenses category"
+          text1="Contact lens brands"
           style={{
             paddingTop: DeviceInfo.hp('6%'),
             paddingBottom: DeviceInfo.hp('4%'),
@@ -54,7 +55,6 @@ const ProductCategory = ({navigation}) => {
           <View style={styles.cardWrapper}>
             {contactLenses.map((list, i) => {
               return (
-                
                   <View key={i} style={styles.card}>
                     <TouchableOpacity activeOpacity={.5} onPress={()=>navigation.navigate('OderContactLens',{index:i})}>
                     <View style={styles.imgViewWrapper}>
@@ -68,7 +68,6 @@ const ProductCategory = ({navigation}) => {
                     </View>
                     </TouchableOpacity>
                   </View>
-                
               );
             })}
           </View>
@@ -82,6 +81,9 @@ export default ProductCategory;
 
 const styles = StyleSheet.create({
   container: {
+    // flex:1,
+    // borderWidth:10,
+    // borderColor:'green'
   },
   cardWrapper: {
     flexDirection: 'row',
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
     width: '48.7%',
     height: DeviceInfo.hp('17.5%'),
     marginBottom: DeviceInfo.hp('1.1%'),
-    paddingHorizontal: 10,
+    // paddingHorizontal: 10,
   },
   cardContaner: {
     alignItems: 'center',
@@ -108,8 +110,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   img: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
+    borderRadius: 10
   },
   imgViewWrapper: {
     width: '100%',

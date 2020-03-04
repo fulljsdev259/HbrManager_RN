@@ -6,7 +6,6 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import DeviceInfo from '../utiles/deviceInfo';
 
 const Footer = ({navigateRef})=>{
-  console.log(navigateRef,'refrefrefrefref');
 
   function handleNavigate(navigateTo){
     if(navigateRef && navigateRef.current){
@@ -34,7 +33,7 @@ const Footer = ({navigateRef})=>{
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>handleNavigate('ProductCategory')} activeOpacity={.5}>
+        <TouchableOpacity onPress={()=>handleNavigate('OderContactLens')} activeOpacity={.5}>
           <View style={styles.imgView}>
             <Image resizeMode="contain" style={styles.img} source={require("../../assets/footer/Group_67.png")} />
           </View>

@@ -268,7 +268,9 @@ export default class ImageCarousel extends Component {
                       <View
                         style={[
                           styles.dropdownWrapper,
-                          {paddingVertical: list.one ? 0 : 7,height:list.one ? 18 : null},
+                          list.one &&
+                          {alignItems:'center'},
+                          { paddingVertical: list.one ? 0 : 7,height:list.one ? 18 : null},
                         ]}>
                         {!list.one ? (
                           <>
@@ -288,6 +290,8 @@ export default class ImageCarousel extends Component {
                       <View
                         style={[
                           styles.dropdownWrapper,
+                          list.one &&
+                          {alignItems:'center'},
                           {paddingVertical: list.one ? 0 : 7},
                         ]}>
                         {!list.one ? (
@@ -457,6 +461,9 @@ const styles = StyleSheet.create({
   },
   curve: {
     fontSize: 10,
+    // borderWidth:1,
+    textAlignVertical:'center'
+    
   },
   totalCharge: {
     textAlign: 'right',

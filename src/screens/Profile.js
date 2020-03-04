@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Text, View, ScrollView, StyleSheet, TextInput} from 'react-native';
+import {Text, View, ScrollView, StyleSheet, TextInput, TouchableOpacity, Platform} from 'react-native';
 import AppLogo from '../generic/AppLogo';
 import GenericButton from '../generic/GenericButton';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
-
+// https://i.diawi.com/eCsESf
 const Profile = ({navigation}) => {
     const [isEdit , setEdit] = useState(false)
     function handleEdit(){
@@ -28,8 +28,10 @@ const Profile = ({navigation}) => {
               placeholder="1876746578"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&<View style={styles.editView}>
-              <Text style={styles.editText}>Edit</Text>
+            {isEdit &&<View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
+              <TouchableOpacity activeOpacity={.5}>
+                <Text style={styles.editText}>Edit</Text>
+              </TouchableOpacity>
             </View>}
           </View>
           <View style={[styles.inputWrapper]}>
@@ -39,8 +41,11 @@ const Profile = ({navigation}) => {
               placeholder="Johan Hausenburg"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&<View style={styles.editView}>
-              <Text style={styles.editText}>Edit</Text>
+            {isEdit &&
+            <View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
+              <TouchableOpacity activeOpacity={.5}>
+                  <Text style={styles.editText}>Edit</Text>
+              </TouchableOpacity>
             </View>}
           </View>
           <View style={styles.inputWrapper}>
@@ -50,8 +55,11 @@ const Profile = ({navigation}) => {
               placeholder="07766545434"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&<View style={styles.editView}>
-              <Text style={styles.editText}>Edit</Text>
+            {isEdit &&
+            <View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
+              <TouchableOpacity activeOpacity={.5}>
+                <Text style={styles.editText}>Edit</Text>
+              </TouchableOpacity>
             </View>}
           </View>
           <View style={styles.inputWrapper}>
@@ -61,8 +69,10 @@ const Profile = ({navigation}) => {
               placeholder="johan@gmail.com"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&<View style={styles.editView}>
-              <Text style={styles.editText}>Edit</Text>
+            {isEdit &&<View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
+              <TouchableOpacity activeOpacity={.5}>
+                <Text style={styles.editText}>Edit</Text>
+              </TouchableOpacity>
             </View>}
           </View>
         </View>
@@ -139,12 +149,14 @@ const styles = StyleSheet.create({
     right: 0,
     alignItems:'center',
     flexDirection:'column',
-    height:"100%"
+    height:"100%", 
+  },
+  bottom:{
+    bottom:10 
   },
   editText: {
     color: COLOR.yellow,
     fontFamily: 'Raleway-Medium',
-    fontSize: DeviceInfo.hp('1.1%'),
-    marginTop:DeviceInfo.hp('.5%')
+    fontSize: DeviceInfo.hp('1.5%'),
   },
 });

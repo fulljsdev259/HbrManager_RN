@@ -22,12 +22,12 @@ const ApplyOrSignin = ({navigation})=>{
                 <GenericButton
                     style={styles.genericBtn}
                     text="Sign In"
-                    onPress={()=>navigation.navigate("Profile")}
+                    onPress={()=>navigation.navigate("SignIn")}
                 />
                 <GenericButton
                     style={styles.genericBtn}
                     text="Apply"
-                    onPress={()=>navigation.navigate("Profile")}
+                    onPress={()=>navigation.navigate("ApplyForLc")}
                 />
                 </View>
             </ImageBackground>

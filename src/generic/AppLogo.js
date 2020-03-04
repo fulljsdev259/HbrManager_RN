@@ -27,13 +27,13 @@ const AppLogo = ({
   console.log(StatusBar.currentHeight,'android')
   return (
     <View style={styles.container}>
-      <View style={{backgroundColor: logoBg}}>
+      <View style={[styles.notchDetectorView,{backgroundColor: logoBg}]}>
         <View style={styles.applogoView}>
           <View style={styles.applogoWrapper}>
             <Image
               style={styles.applogo}
               resizeMode="contain"
-              source={require('../../assets/applogo.png')}
+              source={require('../../assets/app-logo-original.png')}
             />
           </View>
         </View>
@@ -87,9 +87,14 @@ export default AppLogo;
 
 const styles = StyleSheet.create({
   container:{
-    paddingTop:DeviceInfo.deviceDeepInfo.hasNotch() && Platform.OS ==='ios' ? DeviceInfo.hp('3.7%') : 0
+    // paddingTop:20
+    // paddingTop:DeviceInfo.deviceDeepInfo.hasNotch() && Platform.OS ==='ios' ? DeviceInfo.hp('3.7%') : 0
   },  
+  notchDetectorView:{
+    paddingTop:DeviceInfo.deviceDeepInfo.hasNotch() && Platform.OS ==='ios' ? DeviceInfo.hp('3.7%') : 0
+  },
   applogo: {
+    // marginTop:20,
     width: '100%',
     height: '100%',
   },

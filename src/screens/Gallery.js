@@ -32,8 +32,8 @@ const Gallery = ({text1, text2, style}) => {
             </View>
             <View style={styles.galleryInfoWrapper}>
               <View style={styles.nameView}>
-                <Text style={styles.name}>hbdopticians</Text>
-                <Text style={[styles.name, styles.dot]}>...</Text>
+                <Text style={styles.name}>hoddbarnesdickinsmasonsave</Text>
+                {/* <Text style={[styles.name, styles.dot]}>...</Text> */}
               </View>
               <View style={styles.separator} />
               <View style={styles.followView}>

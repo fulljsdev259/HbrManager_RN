@@ -14,19 +14,19 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Card} from 'native-base';
 
 const filtersType = [
-  'Sort',
-  'Brands',
-  'Price',
-  'Lens Type',
-  'Lens Color',
-  'Solution Quantity',
-  'Sub Category',
+  {name:'Sort', categories:["Daily","Multifocal","Astigmatism/Toric","2 Weekly","Extended Wear",]},
+  {name:'Category',categories:["Daily","Multifocal","Astigmatism/Toric","2 Weekly","Extended Wear",]},
+  {name:'Price',categories:['Price - Low to High', 'Price - High to Low', 'Newest First']},
+  {name:'Brand', categories:['ACUVUE','DAILIES', 'MyDay', 'clariti', 'Biotrue', 'SofLens' ]},
+  {name:'Lens Color', categories:['Spicy Gray', 'Aqua Color', 'Dusky Brown']},
 ];
 
 const ProductFilter = ({setFilter}) => {
   const [filterValue, setValue] = useState('Sort');
   const [filterIndex, setIndex] = useState(0);
   const [defautValue, setDefaultValue] = useState(0);
+  const [categories, setCategory] = useState(filtersType[0].categories)
+
   return (
     <View style={styles.filterContainer}>
       <AppLogo textStyle={{color: COLOR.black}} logoBg={COLOR.blackBg} />
@@ -45,7 +45,7 @@ const ProductFilter = ({setFilter}) => {
             <Text style={styles.resetText}>RESET ALL</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={{width: '62%'}} activeOpacity={0.5}>
+        <TouchableOpacity onPress={setFilter} style={{width: '62%'}} activeOpacity={0.5}>
           <View style={styles.applyView}>
             <Text style={styles.applyText}>APPLY FILTERS</Text>
           </View>
@@ -59,24 +59,25 @@ const ProductFilter = ({setFilter}) => {
                 <TouchableOpacity
                   key={i}
                   onPress={() => {
-                    setValue(list);
+                    setValue(list.name);
                     setIndex(i);
+                    setCategory(list.categories)
                   }}
                   activeOpacity={0.5}>
                   <View
                     style={[
                       styles.typeView,
                       i == filtersType.length - 1 ? {...styles.lastItem} : {},
-                      filterValue == list
+                      filterValue == list.name
                         ? {backgroundColor: COLOR.mediumGreen}
                         : {},
                     ]}>
                     <Text
                       style={[
                         styles.typeText,
-                        filterValue == list ? {color: COLOR.white} : {},
+                        filterValue == list.name ? {color: COLOR.white} : {},
                       ]}>
-                      {list}
+                      {list.name}
                     </Text>
                   </View>
                   {i == filtersType.length - 1 && (
@@ -86,12 +87,12 @@ const ProductFilter = ({setFilter}) => {
               );
             })}
           </Card>
-          <Card
+          {categories && categories.length >0  &&  <Card
             style={[
               styles.filterOptions,
               {top: filterIndex * DeviceInfo.hp('5.2%')},
             ]}>
-            {['Price - Low to High', 'Price - High to Low', 'Newest First'].map(
+            {categories.map(
               (list, i) => {
                 return (
                   <View key={i} style={styles.listWrapper}>
@@ -112,7 +113,7 @@ const ProductFilter = ({setFilter}) => {
                 );
               },
             )}
-          </Card>
+          </Card>}
         </View>
       </View>
     </View>

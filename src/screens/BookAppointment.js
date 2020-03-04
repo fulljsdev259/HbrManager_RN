@@ -91,9 +91,9 @@ const BookAppointment = ({}) => {
             </CollapseHeader>
             <CollapseBody>
               {list.type &&
-                list.type.map(element => {
+                list.type.map((element, i) => {
                   return (
-                    <View style={styles.rowView}>
+                    <View key={i} style={styles.rowView}>
                       <Text style={styles.appointmentName}>{element.appointmentName}</Text>
                       <Text style={styles.charge}>{element.charge}</Text>
                     </View>

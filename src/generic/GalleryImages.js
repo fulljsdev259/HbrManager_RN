@@ -4,8 +4,8 @@ import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 
 const images =[
-    require("../../assets/gallery/img2.png"),
     require("../../assets/gallery/img1.png"),
+    require("../../assets/gallery/img2.png"),
     require("../../assets/gallery/img3.png"),
     require("../../assets/gallery/img4.png"),
     require("../../assets/gallery/img5.png"),
@@ -15,7 +15,10 @@ const images =[
     require("../../assets/gallery/img9.png"),
     require("../../assets/gallery/img10.png"),
     require("../../assets/gallery/img11.png"),
-    require("../../assets/gallery/img12.png")
+    require("../../assets/gallery/img12.png"),
+    require("../../assets/gallery/img13.png"),
+    require("../../assets/gallery/img15.png"),
+    require("../../assets/gallery/img16.png")
 ]
 
 const GalleryImages = ({text1, text2, style})=>{
@@ -24,7 +27,7 @@ const GalleryImages = ({text1, text2, style})=>{
       
         return(
             <View style={[styles.imgView,{marginRight:index+1*3 ? 2 : 0   }]}>
-                <Image /* resizeMode="contain" */ style={styles.img} source={item} />
+                <Image style={styles.img} source={item} />
             </View>
         )
     }
@@ -37,7 +40,7 @@ const GalleryImages = ({text1, text2, style})=>{
                 renderItem={_renderItem}
                 numColumns={3}
                 keyExtractor={_keyExtractor}
-                ItemSeparatorComponent={()=><View style={{height:3}} />}
+                ItemSeparatorComponent={()=><View style={{height:2}} />}
             />
         </View>
     )

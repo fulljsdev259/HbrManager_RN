@@ -43,7 +43,7 @@ const Gallery = ({text1, text2, style}) => {
                     style={styles.dropIcon}
                     color={COLOR.white}
                     name="md-arrow-dropdown"
-                    size={DeviceInfo.hp('2.7%')}
+                    size={DeviceInfo.hp('2.4%')}
                   />
                 </View>
                 {/* </View> */}
@@ -160,6 +160,9 @@ const styles = StyleSheet.create({
   followText: {
     backgroundColor: COLOR.blue,
     paddingHorizontal: 10,
+    height:DeviceInfo.hp('2.7%'),
+    includeFontPadding:false,
+    textAlignVertical:'center',
     borderRadius: 3,
     color: COLOR.white,
     fontFamily: 'Poppins-Medium',

@@ -15,77 +15,106 @@ import DeviceInfo from '../utiles/deviceInfo';
 const BasketCard = ({type, onPress}) => {
   const _renderItem = (item, index) => {
     return (
-      <TouchableOpacity
-      activeOpacity={.5}
-        onPress={() => {
-          onPress ? onPress() : null;
-        }}>
-        <View style={styles.contentView}>
-          <View style={styles.imgView}>
-            <Image
-              resizeMode="contain"
-              style={styles.img}
-              source={require('../../assets/comfi-pure51042-132basket.png')}
-            />
+      <View style={styles.contentView}>
+        <View style={styles.imgView}>
+          <Image
+            resizeMode="contain"
+            style={styles.img}
+            source={require('../../assets/comfi-pure51042-132basket.png')}
+          />
+        </View>
+        <View style={styles.detailsView}>
+          <View style={styles.itemDetailsView}>
+            <View>
+              <Text style={styles.name}>comfi Colors 1 Day</Text>
+              <Text style={styles.itemDetails}>
+                Dapibus mus eros. Leo potenti. Id Malesuada nulla interdum
+                scelerisque.{' '}
+              </Text>
+            </View>
+            <View>
+              <Text style={styles.price}>£7.50</Text>
+            </View>
           </View>
-          <View style={styles.detailsView}>
-            <View style={styles.itemDetailsView}>
-              <View>
-                <Text style={styles.name}>comfi Colors 1 Day</Text>
-                <Text style={styles.itemDetails}>
-                  Dapibus mus eros. Leo potenti. Id Malesuada nulla interdum
-                  scelerisque.{' '}
-                </Text>
-              </View>
-              <View>
-                <Text style={styles.price}>£7.50</Text>
-              </View>
-            </View>
-            <View
-              style={[
-                styles.deleteView,
-                {justifyContent: type ? 'center' : 'space-evenly'},
-              ]}>
-              <View style={styles.deleteTextView}>
-                <Text style={[styles.deleteText, type ? styles.mb : {}, Platform.OS === 'ios' && DeviceInfo.height < 700 && {marginBottom:3}]}>
-                  {type ? 'Order date' : 'Delete'}
-                </Text>
-                {!type && <View style={[styles.underLine,styles.mb,styles.underLineForBasket]} />}
-              </View>
-              {type && (
-                <Text style={[styles.deleteText,styles.mb, Platform.OS === 'ios' && DeviceInfo.height < 700 && {marginBottom:3}, {color: COLOR.yellow}]}>
-                  22/2/20
-                </Text>
-              )}
+          <View
+            style={[
+              styles.deleteView,
+              {justifyContent: type ? 'center' : 'space-evenly'},
+            ]}>
+            <View style={styles.deleteTextView}>
+              <Text
+                style={[
+                  styles.deleteText,
+                  type ? styles.mb : {},
+                  Platform.OS === 'ios' &&
+                    DeviceInfo.height < 700 && {marginBottom: 3},
+                ]}>
+                {type ? 'Order date' : 'Delete'}
+              </Text>
               {!type && (
-                <View style={[styles.totalTextView,styles.mb, Platform.OS === 'ios' && DeviceInfo.height < 700 && {marginBottom:3}]}>
-                  <Text style={styles.totalView}>1</Text>
-                </View>
+                <View
+                  style={[
+                    styles.underLine,
+                    styles.mb,
+                    styles.underLineForBasket,
+                  ]}
+                />
               )}
-              {type && (
-                <View style={[styles.deleteTextView]}>
-                  <Text style={styles.deleteText}>View order</Text>
-                  <View style={styles.underLine} />
-                </View>
-              )}
+            </View>
+            {type && (
+              <Text
+                style={[
+                  styles.deleteText,
+                  styles.mb,
+                  Platform.OS === 'ios' &&
+                    DeviceInfo.height < 700 && {marginBottom: 3},
+                  {color: COLOR.yellow},
+                ]}>
+                22/2/20
+              </Text>
+            )}
+            {!type && (
+              <View
+                style={[
+                  styles.totalTextView,
+                  styles.mb,
+                  Platform.OS === 'ios' &&
+                    DeviceInfo.height < 700 && {marginBottom: 3},
+                ]}>
+                <Text style={styles.totalView}>1</Text>
+              </View>
+            )}
+            {type && (
+              <View style={[styles.deleteTextView]}>
+                <Text style={styles.deleteText}>View order</Text>
+                <View style={styles.underLine} />
+              </View>
+            )}
 
-              {!type && (
-                <View style={styles.countView}>
+            {!type && (
+              <View style={styles.countView}>
+                <TouchableOpacity activeOpacity={0.5}>
                   <View style={styles.handleCountTextView}>
-                    <Image source={require('../../assets/more.png')} style={{width:'100%', height:'100%'}} />
-                    {/* <Text  style={styles.countHandleText}>+</Text> */}
+                    <Image
+                      source={require('../../assets/more.png')}
+                      style={{width: '100%', height: '100%'}}
+                    />
                   </View>
-                  <View style={{width:5}} />
+                </TouchableOpacity>
+                <View style={{width: 10}} />
+                <TouchableOpacity activeOpacity={0.5}>
                   <View style={styles.handleCountTextView}>
-                  <Image source={require('../../assets/less.png')} style={{width:'100%', height:'100%'}} />
-                    {/* <Text style={styles.countHandleText}>-</Text> */}
+                    <Image
+                      source={require('../../assets/less.png')}
+                      style={{width: '100%', height: '100%'}}
+                    />
                   </View>
-                </View>
-              )}
-            </View>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
     );
   };
   const _getItem = (item, index) => {
@@ -142,7 +171,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'space-between',
-    paddingHorizontal:20,
+    paddingHorizontal: 20,
     // borderWidth:1
   },
   name: {
@@ -180,10 +209,10 @@ const styles = StyleSheet.create({
     borderRadius: DeviceInfo.wp('2.5%'),
   },
   countHandleText: {
-    color: COLOR.white, 
+    color: COLOR.white,
     fontSize: DeviceInfo.hp('2.5%'),
-    includeFontPadding:false,
-    textAlignVertical:'center'
+    includeFontPadding: false,
+    textAlignVertical: 'center',
   },
   deleteView: {
     flexDirection: 'column',
@@ -191,21 +220,21 @@ const styles = StyleSheet.create({
   deleteText: {
     fontFamily: 'Poppins-Medium',
     fontSize: DeviceInfo.hp('1.3%'),
-    alignSelf:'center'
+    alignSelf: 'center',
   },
   totalView: {
     fontFamily: 'Poppins-Medium',
     fontSize: DeviceInfo.hp('1.2%'),
-    includeFontPadding:false,
+    includeFontPadding: false,
     // textAlignVertical:'center'
   },
   underLine: {
     borderBottomWidth: 1,
-    marginTop:Platform.OS ==='ios' ? 0 : -2,
+    marginTop: Platform.OS === 'ios' ? 0 : -2,
   },
-  underLineForBasket:{
-    width:'85%',
-    alignSelf:'center'
+  underLineForBasket: {
+    width: '85%',
+    alignSelf: 'center',
   },
   totalTextView: {
     borderWidth: 1,
@@ -217,7 +246,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // paddingTop: 3,
   },
-  mb:{
-    marginBottom:5
-  }
+  mb: {
+    marginBottom: 5,
+  },
 });

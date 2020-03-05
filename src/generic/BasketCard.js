@@ -55,7 +55,7 @@ const BasketCard = ({type, onPress}) => {
                       //   DeviceInfo.height < 700 && {marginBottom: 3},
                     ]}>
                     <Text style={styles.totalView}>1</Text>
-                  </View>
+                  </View>``
                   <TouchableOpacity activeOpacity={0.5}>
                     <View style={styles.handleCountTextView}>
                       <Image

@@ -24,7 +24,7 @@ const images =[
 const GalleryImages = ({text1, text2, style})=>{
   const  _renderItem=({item,index})=>{      
         return(
-            <View style={[styles.imgView,{marginRight:index+1*3 ? 2 : 0   }]}>
+            <View style={[styles.imgView,{marginRight:index+1*3 ? DeviceInfo.wp(".5%") : 0   }]}>
                 <Image style={styles.img} source={item} />
             </View>
         )
@@ -49,8 +49,8 @@ export default GalleryImages;
 
 const styles = StyleSheet.create({
     imgView:{
-        width:DeviceInfo.wp("29.5%"),
-        height:DeviceInfo.wp("29.5%")
+        width:DeviceInfo.wp("33%"),
+        height:DeviceInfo.wp("33%")
     },
     img:{
         width:'100%',

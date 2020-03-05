@@ -24,8 +24,9 @@ const Gallery = ({text1, text2, style}) => {
   const PLATFORMCOLOR = Platform.OS === 'ios' ? '#000' : '#fff';
   return (
     <View style={styles.container}>
+      <AppLogo logoBg={COLOR.blackBg} />
       <ScrollView>
-        <AppLogo logoBg={COLOR.blackBg} />
+        
         <View style={styles.contentWrapper}>
           <View style={[styles.wrapper, {backgroundColor: PLATFORMCOLOR}]}>
             <View style={styles.headerView}>

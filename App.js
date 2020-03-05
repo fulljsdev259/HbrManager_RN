@@ -8,6 +8,7 @@
 
 import React from 'react';
 import {
+  Text
 } from 'react-native';
 import Welcome from './src/screens/Welcome';
 import ApplyOrSignin from './src/screens/ApplyOrSignin';
@@ -29,15 +30,24 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Footer from './src/generic/Footer';
+import AppLogo from './src/generic/AppLogo'
 
 const ref = React.createRef();
 const Stack = createStackNavigator();
-const App= () => {
-  console.log(ref,'refm');
+const transparentBgScreens = []
+const App= (props) => {
+  const backgroundColor  = ['ApplyOrSignin', 'SignIn', 'AppLoyaltyCard', 'ContactUs', 'SocilLogin']
+  console.log(ref.current && ref.current.getRootState(),props,'refm');
+ function handleRouteChange(){
+
+  }
   
   return (
     <>
-    <NavigationContainer ref={ref}>
+    {/* <AppLogo /> */}
+    <NavigationContainer
+    onStateChange={(state)=>handleRouteChange(state)}
+    ref={ref}>
       <Stack.Navigator
         initialRouteName="Welcome"
       >

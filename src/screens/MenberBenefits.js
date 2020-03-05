@@ -6,12 +6,14 @@ import {
   StyleSheet,
   ScrollView,
   PixelRatio,
+  Animated,
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
 import GenericButton from '../generic/GenericButton';
 import MembershipCards from '../generic/MembershipCards';
+import LogoText from '../generic/LogoText';
 
 const memberCards = [
   {
@@ -51,8 +53,8 @@ const cards = [
       'New product information and early bird launch invitations',
     ],
     bg: '#39565d',
-    offer:"£9",
-    screen:'ApplyForLc'
+    offer: '£9',
+    screen: 'ApplyForLc',
   },
   {
     title: 'Black Card',
@@ -67,23 +69,27 @@ const cards = [
       'New product information and early bird launch invitations',
     ],
     bg: '#272727',
-    style:{marginTop:DeviceInfo.hp("4.4%")},
-    offer:"£15",
-    screen:"ApplyForLc"
+    style: {marginTop: DeviceInfo.hp('4.4%')},
+    offer: '£15',
+    screen: 'ApplyForLc',
   },
 ];
 
 const MemberBenefits = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <View>
+        <AppLogo />
+      </View>
       <ScrollView>
-        <AppLogo
+        <LogoText
           text1="Member benefits"
           style={{
             paddingTop: DeviceInfo.hp('7%'),
             paddingBottom: DeviceInfo.hp('4%'),
           }}
         />
+
         <Text style={styles.cardText}>
           The Scheme is designed as a thank you to our patients who have
           supported us in our aim to be best Independent Optician in London. The
@@ -91,7 +97,7 @@ const MemberBenefits = ({navigation}) => {
           include…..
         </Text>
         <View style={styles.cardWrapper}>
-          {memberCards.map((item,i) => {
+          {memberCards.map((item, i) => {
             return (
               <View key={i} style={[styles.cardView, {marginTop: item.mt}]}>
                 <View style={[styles.offerWrapper, {right: item.right}]}>
@@ -107,11 +113,15 @@ const MemberBenefits = ({navigation}) => {
           })}
         </View>
         <View style={styles.cardContainer}>
-            {cards.map((item, i) => {
-            return <MembershipCards
-            onPress={()=>  navigation.navigate(item.screen)}
-            item={item} key={i} />;
-            })}
+          {cards.map((item, i) => {
+            return (
+              <MembershipCards
+                onPress={() => navigation.navigate(item.screen)}
+                item={item}
+                key={i}
+              />
+            );
+          })}
         </View>
       </ScrollView>
     </View>
@@ -175,7 +185,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: DeviceInfo.pixel(7),
   },
-  cardContainer:{
-      marginVertical:DeviceInfo.hp('7%')
-  }
+  cardContainer: {
+    marginVertical: DeviceInfo.hp('7%'),
+  },
 });

@@ -14,6 +14,7 @@ import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import ProductFilter from '../generic/ProductFilter';
+import LogoText from '../generic/LogoText';
 
 export const contactLenses = [
   {
@@ -64,7 +65,9 @@ export const contactLenses = [
 const OderContactLens = ({navigation}) => {
   const [isFilter, setFilter] = useState(false);
   return (
+    <>
     <View style={styles.container}>
+    <AppLogo logoBg={COLOR.blackBg} />
       <View style={styles.floatContainer}>
         <TouchableOpacity activeOpacity={0.5} onPress={() => setFilter(true)}>
           <View style={styles.floatButton}>
@@ -77,15 +80,16 @@ const OderContactLens = ({navigation}) => {
         </TouchableOpacity>
       </View>
       {isFilter && <ProductFilter setFilter={() => setFilter()} />}
-      <ScrollView>
-        <AppLogo
+      
+      <ScrollView style={{}}>
+        
+        <LogoText
           text1="Order contact lenses"
           style={{
             paddingTop: DeviceInfo.hp('6%'),
             paddingBottom: DeviceInfo.hp('4%'),
           }}
           textStyle={{color: COLOR.black}}
-          logoBg={COLOR.blackBg}
         />
         <View style={styles.cardContaner}>
           <View style={styles.cardWrapper}>
@@ -116,6 +120,7 @@ const OderContactLens = ({navigation}) => {
         </View>
       </ScrollView>
     </View>
+    </>
   );
 };
 
@@ -123,6 +128,7 @@ export default OderContactLens;
 
 const styles = StyleSheet.create({
   container: {
+    flex:1
   },
   cardWrapper: {
     flexDirection: 'row',
@@ -177,7 +183,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     shadowOffset: {width: 0, height: 10},
     shadowColor: 'black',
-    shadowOpacity: Platform.OS === 'ios' ? .7 : 1,
+    shadowOpacity: Platform.OS === 'ios' ? 0.7 : 1,
     elevation: 10,
   },
   floatContainer: {

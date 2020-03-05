@@ -32,7 +32,7 @@ const BasketCard = ({type, onPress}) => {
               ) : (
                 <Text style={styles.itemDetails}>
                   Dapibus mus eros. Leo potenti. Id Malesuada nulla interdum
-                  scelerisque.{' '}
+                  scelerisque.
                 </Text>
               )}
             </View>
@@ -47,12 +47,9 @@ const BasketCard = ({type, onPress}) => {
                       />
                     </View>
                   </TouchableOpacity>
-                  <View
-                    style={[
-                      styles.totalTextView,
-                    ]}>
+                  <View style={[styles.totalTextView]}>
                     <Text style={styles.totalView}>1</Text>
-                  </View>``
+                  </View>
                   <TouchableOpacity activeOpacity={0.5}>
                     <View style={styles.handleCountTextView}>
                       <Image

@@ -1,20 +1,30 @@
 import React, {useState} from 'react';
-import {Text, View, ScrollView, StyleSheet, TextInput, TouchableOpacity, Platform} from 'react-native';
+import {
+  Text,
+  View,
+  ScrollView,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 import AppLogo from '../generic/AppLogo';
 import GenericButton from '../generic/GenericButton';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
-// https://i.diawi.com/eCsESf
+import LogoText from '../generic/LogoText';
+
 const Profile = ({navigation}) => {
-    const [isEdit , setEdit] = useState(false)
-    function handleEdit(){
-        setEdit(!isEdit)
-    }
+  const [isEdit, setEdit] = useState(false);
+  function handleEdit() {
+    setEdit(!isEdit);
+  }
   return (
     <View style={styles.container}>
+      <AppLogo />
       <ScrollView>
-        <AppLogo
-          text1={isEdit ? "Edit profile" :"Profile"}
+        <LogoText
+          text1={isEdit ? 'Edit profile' : 'Profile'}
           style={{
             paddingTop: DeviceInfo.hp('7%'),
             paddingBottom: DeviceInfo.hp('3%'),
@@ -28,11 +38,17 @@ const Profile = ({navigation}) => {
               placeholder="1876746578"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&<View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
-              <TouchableOpacity activeOpacity={.5}>
-                <Text style={styles.editText}>Edit</Text>
-              </TouchableOpacity>
-            </View>}
+            {isEdit && (
+              <View
+                style={[
+                  styles.editView,
+                  Platform.OS === 'ios' && styles.bottom,
+                ]}>
+                <TouchableOpacity activeOpacity={0.5}>
+                  <Text style={styles.editText}>Edit</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
           <View style={[styles.inputWrapper]}>
             <Text style={styles.fieldName}>Name : </Text>
@@ -41,12 +57,17 @@ const Profile = ({navigation}) => {
               placeholder="Johan Hausenburg"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&
-            <View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
-              <TouchableOpacity activeOpacity={.5}>
+            {isEdit && (
+              <View
+                style={[
+                  styles.editView,
+                  Platform.OS === 'ios' && styles.bottom,
+                ]}>
+                <TouchableOpacity activeOpacity={0.5}>
                   <Text style={styles.editText}>Edit</Text>
-              </TouchableOpacity>
-            </View>}
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
           <View style={styles.inputWrapper}>
             <Text style={styles.fieldName}>Phone : </Text>
@@ -55,12 +76,17 @@ const Profile = ({navigation}) => {
               placeholder="07766545434"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&
-            <View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
-              <TouchableOpacity activeOpacity={.5}>
-                <Text style={styles.editText}>Edit</Text>
-              </TouchableOpacity>
-            </View>}
+            {isEdit && (
+              <View
+                style={[
+                  styles.editView,
+                  Platform.OS === 'ios' && styles.bottom,
+                ]}>
+                <TouchableOpacity activeOpacity={0.5}>
+                  <Text style={styles.editText}>Edit</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
           <View style={styles.inputWrapper}>
             <Text style={styles.fieldName}>Email : </Text>
@@ -69,37 +95,48 @@ const Profile = ({navigation}) => {
               placeholder="johan@gmail.com"
               placeholderTextColor={COLOR.white}
             />
-            {isEdit &&<View style={[styles.editView, Platform.OS === 'ios' && styles.bottom ]}>
-              <TouchableOpacity activeOpacity={.5}>
-                <Text style={styles.editText}>Edit</Text>
-              </TouchableOpacity>
-            </View>}
+            {isEdit && (
+              <View
+                style={[
+                  styles.editView,
+                  Platform.OS === 'ios' && styles.bottom,
+                ]}>
+                <TouchableOpacity activeOpacity={0.5}>
+                  <Text style={styles.editText}>Edit</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
         </View>
-        {!isEdit && 
-        <>
+        {!isEdit && (
+          <>
+            <GenericButton
+              style={styles.genericBtn}
+              text="Change Password"
+              onPress={() =>
+                navigation.navigate('ApplyForLc', {isToChangePassword: true})
+              }
+            />
+            <GenericButton
+              style={styles.genericBtn}
+              text="Recent Orders"
+              onPress={() => navigation.navigate('RecentOrders')}
+            />
+          </>
+        )}
         <GenericButton
           style={styles.genericBtn}
-          text="Change Password"
-          onPress={() => navigation.navigate('ApplyForLc', {isToChangePassword:true})}
-        />
-        <GenericButton
-          style={styles.genericBtn}
-          text="Recent Orders"
-          onPress={() => navigation.navigate('RecentOrders')}
-        />
-        </>}
-        <GenericButton
-          style={styles.genericBtn}
-          text={isEdit ? "Save & update" : "Edit"}
+          text={isEdit ? 'Save & update' : 'Edit'}
           onPress={() => handleEdit()}
         />
-        {!isEdit && <GenericButton
-          style={styles.genericBtn}
-          text="Log Out"
-          bgColor={COLOR.darkGreen}
-          onPress={() => navigation.navigate('SignIn')}
-        />}
+        {!isEdit && (
+          <GenericButton
+            style={styles.genericBtn}
+            text="Log Out"
+            bgColor={COLOR.darkGreen}
+            onPress={() => navigation.navigate('SignIn')}
+          />
+        )}
         <View
           style={{paddingBottom: DeviceInfo.isSmall ? DeviceInfo.hp('8%') : 10}}
         />
@@ -147,12 +184,12 @@ const styles = StyleSheet.create({
   editView: {
     position: 'absolute',
     right: 0,
-    alignItems:'center',
-    flexDirection:'column',
-    height:"100%", 
+    alignItems: 'center',
+    flexDirection: 'column',
+    height: '100%',
   },
-  bottom:{
-    bottom:10 
+  bottom: {
+    bottom: 10,
   },
   editText: {
     color: COLOR.yellow,

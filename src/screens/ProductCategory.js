@@ -12,6 +12,7 @@ import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
 import {color} from 'react-native-reanimated';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import LogoText from '../generic/LogoText';
 
 export const contactLenses = [
   {
@@ -28,35 +29,39 @@ export const contactLenses = [
     img: require('../../assets/product-category/Acuvue.jpg'),
     name: 'Blink-N-Clean Eye Drops',
     price: '£3.99',
-    resizeMode:'cover',
+    resizeMode: 'cover',
   },
   {
     img: require('../../assets/product-category/Dailies.jpg'),
     name: 'Dailies Total 1',
     price: '£3.99',
-    resizeMode:'cover',
+    resizeMode: 'cover',
   },
 ];
 
 const ProductCategory = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <AppLogo logoBg={COLOR.blackBg} />
       <ScrollView>
-        <AppLogo
+        <LogoText
           text1="Contact lens brands"
           style={{
             paddingTop: DeviceInfo.hp('6%'),
             paddingBottom: DeviceInfo.hp('4%'),
           }}
           textStyle={{color: COLOR.black}}
-          logoBg={COLOR.blackBg}
         />
         <View style={styles.cardContaner}>
           <View style={styles.cardWrapper}>
             {contactLenses.map((list, i) => {
               return (
-                  <View key={i} style={styles.card}>
-                    <TouchableOpacity activeOpacity={.5} onPress={()=>navigation.navigate('OderContactLens',{index:i})}>
+                <View key={i} style={styles.card}>
+                  <TouchableOpacity
+                    activeOpacity={0.5}
+                    onPress={() =>
+                      navigation.navigate('OderContactLens', {index: i})
+                    }>
                     <View style={styles.imgViewWrapper}>
                       <View style={styles.imgView}>
                         <Image
@@ -66,8 +71,8 @@ const ProductCategory = ({navigation}) => {
                         />
                       </View>
                     </View>
-                    </TouchableOpacity>
-                  </View>
+                  </TouchableOpacity>
+                </View>
               );
             })}
           </View>
@@ -110,12 +115,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   img: {
-    width: "100%",
-    height: "100%",
-    borderRadius: 10
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
   },
   imgViewWrapper: {
     width: '100%',
     alignSelf: 'center',
-  }
+  },
 });

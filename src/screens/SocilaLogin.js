@@ -13,6 +13,7 @@ import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
 import GenericTextInput from '../generic/GenericTextInput';
 import GenericButton from '../generic/GenericButton';
+import LogoText from '../generic/LogoText';
 
 const SocilLogin = ({navigation, route}) => {
   const isFbLogin =
@@ -27,8 +28,9 @@ const SocilLogin = ({navigation, route}) => {
         style={styles.bgImg}
         source={require('../../assets/SIGN_INTO_ACCOUNT.png')}>
         <View style={styles.overlay}>
+          <AppLogo />
           <ScrollView>
-            <AppLogo
+            <LogoText
               text1={isFbLogin ? 'Facebook sign in' : 'Google sign in'}
               style={{
                 paddingTop: DeviceInfo.hp('2.5%'),
@@ -41,9 +43,7 @@ const SocilLogin = ({navigation, route}) => {
               <GenericButton
                 text="Sign in"
                 style={styles.genericBtn}
-                onPress={() =>
-                  navigation.navigate('Profile')
-                }
+                onPress={() => navigation.navigate('Profile')}
               />
             </View>
           </ScrollView>
@@ -64,8 +64,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLOR.overlay,
     flex: 1,
   },
-  wrapper: {
-  },
+  wrapper: {},
   genericBtn: {
     marginTop: DeviceInfo.hp('1.6%'),
   },

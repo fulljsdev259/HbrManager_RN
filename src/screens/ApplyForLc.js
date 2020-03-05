@@ -15,9 +15,10 @@ import AppLogo from '../generic/AppLogo';
 import GenericTextInput from '../generic/GenericTextInput';
 import GenericButton from '../generic/GenericButton';
 import {Picker, Form, Content, Icon} from 'native-base';
+import LogoText from '../generic/LogoText';
 // https://i.diawi.com/aDGouu
 
-console.log(DeviceInfo.height,'kkkk')
+console.log(DeviceInfo.height, 'kkkk');
 
 const textFeild = [
   'Patient number',
@@ -39,8 +40,9 @@ const ApplyForLc = ({route, navigation}) => {
   const feildsToRender = isToChangePassword ? changePassword : textFeild;
   return (
     <View style={styles.container}>
+      <AppLogo />
       <ScrollView>
-        <AppLogo
+        <LogoText
           text1={isToChangePassword ? 'Change password' : 'Apply for a'}
           text2={isToChangePassword ? ' ' : 'loyalty card'}
           style={{
@@ -64,13 +66,17 @@ const ApplyForLc = ({route, navigation}) => {
                             style={{color: COLOR.yellow, ...styles.pb}}
                           />
                         }
-                        style={{width: undefined, color: COLOR.white,...styles.pb}}
+                        style={{
+                          width: undefined,
+                          color: COLOR.white,
+                          ...styles.pb,
+                        }}
                         selectedValue={card}
                         placeholder="Select card"
                         textStyle={{
                           color: COLOR.white,
                           fontSize: DeviceInfo.hp('1.6%'),
-                          fontFamily: 'Poppins-Regular'
+                          fontFamily: 'Poppins-Regular',
                         }}
                         itemTextStyle={{
                           color: COLOR.black,
@@ -92,14 +98,12 @@ const ApplyForLc = ({route, navigation}) => {
               return (
                 <View key={i} style={styles.pickerView}>
                   <View style={styles.pickerDefaultTextView}>
-                    <Text style={styles.pickerDefaultText}>
-                      {card}
-                    </Text>
-                    </View>
+                    <Text style={styles.pickerDefaultText}>{card}</Text>
+                  </View>
                   <Picker
                     selectedValue={card}
                     style={styles.picker}
-                    textStyle={{color:'red'}}
+                    textStyle={{color: 'red'}}
                     onValueChange={(itemValue, itemIndex) =>
                       setCard(itemValue)
                     }>
@@ -147,15 +151,15 @@ const styles = StyleSheet.create({
     fontSize: DeviceInfo.hp('1.6%'),
     color: COLOR.white,
   },
-  pickerDefaultTextView:{
-    position:'absolute',
+  pickerDefaultTextView: {
+    position: 'absolute',
     height: DeviceInfo.hp('5.1%'),
-    justifyContent:'center',
-    flexDirection:'column',
-    alignItems:'center',
-    paddingLeft:20
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingLeft: 20,
   },
-  pickerDefaultText:{
+  pickerDefaultText: {
     fontSize: DeviceInfo.hp('1.6%'),
     color: COLOR.white,
   },
@@ -167,7 +171,7 @@ const styles = StyleSheet.create({
     transform: [{scaleX: 0.9}, {scaleY: 0.9}],
     borderWidth: 4,
     marginLeft: -23,
-    opacity:0
+    opacity: 0,
   },
   pickerView: {
     width: '80%',
@@ -187,7 +191,7 @@ const styles = StyleSheet.create({
     width: '10%',
     height: DeviceInfo.hp('5.1%'),
   },
-  pb:{
-    paddingBottom:DeviceInfo.height < 700 ? 14 :4
-  }
+  pb: {
+    paddingBottom: DeviceInfo.height < 700 ? 14 : 4,
+  },
 });

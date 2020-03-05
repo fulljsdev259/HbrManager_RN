@@ -19,6 +19,7 @@ import COLOR from '../utiles/color';
 import AppLogo from '../generic/AppLogo';
 import ModalDropdown from 'react-native-modal-dropdown';
 import GenericButton from '../generic/GenericButton';
+import LogoText from '../generic/LogoText';
 
 const lense = [
   {
@@ -93,12 +94,12 @@ export default class ImageCarousel extends Component {
       ],
       activeSlide: 0,
       isEntries: false,
-      left:true,
-      right:true
+      left: true,
+      right: true,
     };
   }
   componentDidMount() {
-      const {index} =this.props.route.params
+    const {index} = this.props.route.params;
     const {isEntries} = this.state;
     if (
       !isEntries &&
@@ -162,11 +163,15 @@ export default class ImageCarousel extends Component {
     return Math.round(value);
   }
 
-  checkbox = (value) => {
+  checkbox = value => {
     return (
-      <TouchableOpacity onPress={()=>this.setState({[value]:!this.state[value]})} activeOpacity={0.5}>
+      <TouchableOpacity
+        onPress={() => this.setState({[value]: !this.state[value]})}
+        activeOpacity={0.5}>
         <View style={styles.checkbox}>
-          {this.state[value] && <Octicons style={styles.checkIcon} name="check" />}
+          {this.state[value] && (
+            <Octicons style={styles.checkIcon} name="check" />
+          )}
         </View>
       </TouchableOpacity>
     );
@@ -192,8 +197,8 @@ export default class ImageCarousel extends Component {
   };
 
   render() {
-    console.log(this.props,'kkkkkkkkkk');
-    
+    console.log(this.props, 'kkkkkkkkkk');
+
     const slideHeight = DeviceInfo.height * 0.36;
     const slideWidth = this.wp(100);
     const itemHorizontalMargin = this.wp(2);
@@ -202,15 +207,15 @@ export default class ImageCarousel extends Component {
     const itemWidth = slideWidth + itemHorizontalMargin * 0.01;
     return (
       <View style={styles.container}>
+        <AppLogo logoBg={COLOR.blackBg} />
         <ScrollView>
-          <AppLogo
+          <LogoText
+            shop
             text1="Comfi Colors 1 Day"
             style={{
               paddingTop: DeviceInfo.hp('3.8%'),
             }}
             textStyle={{color: COLOR.black}}
-            logoBg={COLOR.blackBg}
-            shop
           />
 
           <View style={styles.carouselWrapper}>
@@ -251,11 +256,11 @@ export default class ImageCarousel extends Component {
             <View style={styles.lensesTypeView}>
               <Text style={styles.sideText}>Eye</Text>
               <View style={styles.checkboxView}>
-                {this.checkbox("left")}
+                {this.checkbox('left')}
                 <Text style={styles.sideText}>Left</Text>
               </View>
               <View style={styles.checkboxView}>
-                {this.checkbox("right")}
+                {this.checkbox('right')}
                 <Text style={styles.sideText}>Right</Text>
               </View>
             </View>
@@ -268,9 +273,11 @@ export default class ImageCarousel extends Component {
                       <View
                         style={[
                           styles.dropdownWrapper,
-                          list.one &&
-                          {alignItems:'center'},
-                          { paddingVertical: list.one ? 0 : 7,height:list.one ? 18 : null},
+                          list.one && {alignItems: 'center'},
+                          {
+                            paddingVertical: list.one ? 0 : 7,
+                            height: list.one ? 18 : null,
+                          },
                         ]}>
                         {!list.one ? (
                           <>
@@ -290,8 +297,7 @@ export default class ImageCarousel extends Component {
                       <View
                         style={[
                           styles.dropdownWrapper,
-                          list.one &&
-                          {alignItems:'center'},
+                          list.one && {alignItems: 'center'},
                           {paddingVertical: list.one ? 0 : 7},
                         ]}>
                         {!list.one ? (
@@ -313,19 +319,17 @@ export default class ImageCarousel extends Component {
                   </View>
                 );
               })}
-
             </View>
             <Text style={[styles.price, styles.totalCharge]}>
               Total - £15.00
             </Text>
-            <GenericButton 
-                text="Add to baseket"
-                onPress={()=>this.props.navigation.navigate('Basket')}
-              />
+            <GenericButton
+              text="Add to baseket"
+              onPress={() => this.props.navigation.navigate('Basket')}
+            />
             <Text style={styles.descriptionText}>Description</Text>
             <View style={styles.textWrapper}>
-              <View style={styles.overlay}>
-              </View>
+              <View style={styles.overlay}></View>
               <Text style={styles.contentText}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -343,6 +347,7 @@ export default class ImageCarousel extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1
   },
   carouselWrapper: {
     width: '85%',
@@ -374,7 +379,7 @@ const styles = StyleSheet.create({
   checkbox: {
     width: DeviceInfo.wp('4%'),
     height: DeviceInfo.wp('4%'),
-    borderWidth:1.5,
+    borderWidth: 1.5,
     borderColor: COLOR.yellow,
     borderRadius: DeviceInfo.wp('1.3%'),
     justifyContent: 'center',
@@ -462,25 +467,23 @@ const styles = StyleSheet.create({
   curve: {
     fontSize: 10,
     // borderWidth:1,
-    textAlignVertical:'center'
-    
+    textAlignVertical: 'center',
   },
   totalCharge: {
     textAlign: 'right',
     marginVertical: DeviceInfo.hp('1.8%'),
   },
-  textWrapper: {
-  },
+  textWrapper: {},
   overlay: {
     width: '100%',
     height: '40%',
     position: 'absolute',
     bottom: 0,
     zIndex: 100,
-    shadowOffset:{  width: 300,  height: 10,  },
+    shadowOffset: {width: 300, height: 10},
     shadowColor: 'black',
     shadowOpacity: 1.0,
-    elevation:10
+    elevation: 10,
   },
   readmore: {
     color: COLOR.yellow,

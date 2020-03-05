@@ -14,7 +14,7 @@ import {
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 
-const AppLogo = ({
+const LogoText = ({
   text1,
   text2,
   style,
@@ -29,28 +29,46 @@ const AppLogo = ({
   console.log(StatusBar.currentHeight, 'android');
   return (
     <View style={styles.container}>
-      <View style={[styles.notchDetectorView, {backgroundColor: logoBg}]}>
-        <View style={styles.applogoView}>
-          <View style={styles.applogoWrapper}>
+      {shop && (
+        <View style={styles.shopTextView}>
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => {
+              handleText ? handleText() : null;
+            }}>
+            <Text style={styles.shopText}>{shopNowText}</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+      <View>
+        {isSocial && (
+          <View style={styles.socialBg}>
             <Image
-              style={styles.applogo}
-              resizeMode="contain"
-              source={require('../../assets/app-logo-original.png')}
+              style={styles.socialImg}
+              source={
+                isFromFb
+                  ? require('../../assets/facebook-icon.png')
+                  : require('../../assets/google.png')
+              }
             />
           </View>
-        </View>
-
-        <View>
-          <View style={styles.yellowLine} />
-          <View style={styles.greenLine} />
-          <View style={styles.yellowLine} />
-        </View>
+        )}
       </View>
+      {(text1 || text2) && (
+        <View style={[style ? {...style} : styles.textContainer]}>
+          {text1 && <Text style={[styles.text, {...textStyle}]}>{text1}</Text>}
+          {text2 && (
+            <Text style={[styles.text, {marginTop: -5}, , {...textStyle}]}>
+              {text2}
+            </Text>
+          )}
+        </View>
+      )}
     </View>
   );
 };
 
-export default AppLogo;
+export default LogoText;
 
 const styles = StyleSheet.create({
   container: {},

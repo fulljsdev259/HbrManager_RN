@@ -7,13 +7,14 @@ import {
   ScrollView,
   PixelRatio,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 import COLOR from '../utiles/color';
 import DeviceInfo from '../utiles/deviceInfo';
 import AppLogo from '../generic/AppLogo';
 import GenericTextInput from '../generic/GenericTextInput';
 import GenericButton from '../generic/GenericButton';
+import LogoText from '../generic/LogoText';
 
 const openingTimes = [
   {day: 'Monday', time: '8:30 am - 5:30 pm'},
@@ -32,8 +33,9 @@ const ContactUs = ({navigation}) => {
         style={styles.bgImg}
         source={require('../../assets/WELCOME__APPLY.png')}>
         <View style={styles.overlay}>
+          <AppLogo />
           <ScrollView>
-            <AppLogo
+            <LogoText
               text1="Contact us"
               style={{
                 paddingTop: DeviceInfo.hp('3.8%'),
@@ -44,7 +46,12 @@ const ContactUs = ({navigation}) => {
               <GenericTextInput placeholder="Name" />
               <GenericTextInput placeholder="Email" />
               <GenericTextInput placeholder="Message" type="text-area" />
-              <GenericButton /* onPress={()=>navigation.navigate('Gallery')} */ style={styles.genericBtn} text="Submit" />
+              <GenericButton
+                /* onPress={()=>navigation.navigate('Gallery')} */ style={
+                  styles.genericBtn
+                }
+                text="Submit"
+              />
               <View style={styles.infoWrapper}>
                 <View style={styles.contentView}>
                   <Text style={styles.mediumText}>
@@ -57,9 +64,9 @@ const ContactUs = ({navigation}) => {
                 <View style={styles.contentView}>
                   <View style={styles.contactInfoView}>
                     <Text style={styles.boldText}>Phone: </Text>
-                    <TouchableOpacity activeOpacity={.5}>
+                    <TouchableOpacity activeOpacity={0.5}>
                       <Text style={styles.mediumText}>0207 600 9861</Text>
-                    </TouchableOpacity> 
+                    </TouchableOpacity>
                   </View>
                   <View style={styles.contactInfoView}>
                     <Text style={styles.boldText}>Fax: </Text>
@@ -67,7 +74,7 @@ const ContactUs = ({navigation}) => {
                   </View>
                   <View style={styles.contactInfoView}>
                     <Text style={styles.boldText}>Email: </Text>
-                    <TouchableOpacity activeOpacity={.5}>
+                    <TouchableOpacity activeOpacity={0.5}>
                       <Text style={styles.mediumText}>
                         reception@hoddbarnesdickins.com
                       </Text>
@@ -77,7 +84,7 @@ const ContactUs = ({navigation}) => {
                 <View style={styles.contentView}>
                   <Text style={styles.boldText}>Opening Times</Text>
                 </View>
-                <View style={styles.contentView}>
+                <View style={[styles.contentView,{marginBottom:DeviceInfo.hp("5%")}]}>
                   {openingTimes.map((list, i) => {
                     return (
                       <View style={styles.contactInfoView} key={i}>

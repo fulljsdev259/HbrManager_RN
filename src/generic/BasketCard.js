@@ -27,19 +27,51 @@ const BasketCard = ({type, onPress}) => {
           <View style={styles.itemDetailsView}>
             <View>
               <Text style={styles.name}>comfi Colors 1 Day</Text>
-              <Text style={styles.itemDetails}>
-                Dapibus mus eros. Leo potenti. Id Malesuada nulla interdum
-                scelerisque.{' '}
-              </Text>
+              {type ? (
+                <Text style={styles.price}>£7.50</Text>
+              ) : (
+                <Text style={styles.itemDetails}>
+                  Dapibus mus eros. Leo potenti. Id Malesuada nulla interdum
+                  scelerisque.{' '}
+                </Text>
+              )}
             </View>
             <View>
-              <Text style={styles.price}>£7.50</Text>
+              {!type && (
+                <View style={styles.countView}>
+                  <TouchableOpacity activeOpacity={0.5}>
+                    <View style={styles.handleCountTextView}>
+                      <Image
+                        source={require('../../assets/less.png')}
+                        style={{width: '100%', height: '100%'}}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                  <View
+                    style={[
+                      styles.totalTextView,
+                      // styles.mb,
+                      // Platform.OS === 'ios' &&
+                      //   DeviceInfo.height < 700 && {marginBottom: 3},
+                    ]}>
+                    <Text style={styles.totalView}>1</Text>
+                  </View>
+                  <TouchableOpacity activeOpacity={0.5}>
+                    <View style={styles.handleCountTextView}>
+                      <Image
+                        source={require('../../assets/more.png')}
+                        style={{width: '100%', height: '100%'}}
+                      />
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              )}
             </View>
           </View>
           <View
             style={[
               styles.deleteView,
-              {justifyContent: type ? 'center' : 'space-evenly'},
+              {justifyContent: type ? 'center' : 'space-between'},
             ]}>
             <View style={styles.deleteTextView}>
               <Text
@@ -73,45 +105,13 @@ const BasketCard = ({type, onPress}) => {
                 22/2/20
               </Text>
             )}
-            {!type && (
-              <View
-                style={[
-                  styles.totalTextView,
-                  styles.mb,
-                  Platform.OS === 'ios' &&
-                    DeviceInfo.height < 700 && {marginBottom: 3},
-                ]}>
-                <Text style={styles.totalView}>1</Text>
-              </View>
-            )}
             {type && (
               <View style={[styles.deleteTextView]}>
                 <Text style={styles.deleteText}>View order</Text>
                 <View style={styles.underLine} />
               </View>
             )}
-
-            {!type && (
-              <View style={styles.countView}>
-                <TouchableOpacity activeOpacity={0.5}>
-                  <View style={styles.handleCountTextView}>
-                    <Image
-                      source={require('../../assets/more.png')}
-                      style={{width: '100%', height: '100%'}}
-                    />
-                  </View>
-                </TouchableOpacity>
-                <View style={{width: 10}} />
-                <TouchableOpacity activeOpacity={0.5}>
-                  <View style={styles.handleCountTextView}>
-                    <Image
-                      source={require('../../assets/less.png')}
-                      style={{width: '100%', height: '100%'}}
-                    />
-                  </View>
-                </TouchableOpacity>
-              </View>
-            )}
+            {!type && <Text style={styles.price}>£7.50</Text>}
           </View>
         </View>
       </View>
@@ -149,10 +149,11 @@ const styles = StyleSheet.create({
     width: '92%',
     // borderWidth:1,
     alignSelf: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
     borderBottomWidth: 1,
-    paddingBottom: DeviceInfo.hp('1.5%'),
-    marginBottom: DeviceInfo.hp('1.5%'),
+    // height: DeviceInfo.width * 0.25,
+    paddingBottom: DeviceInfo.hp('1.7%'),
+    marginBottom: DeviceInfo.hp('1.7%'),
   },
   imgView: {
     width: DeviceInfo.width * 0.19,
@@ -183,11 +184,13 @@ const styles = StyleSheet.create({
     // flex:1,
 
     fontFamily: 'Poppins-Light',
-    fontSize: DeviceInfo.hp('1.2%'),
+    fontSize: DeviceInfo.hp('1.1%'),
   },
   price: {
     fontFamily: 'Poppins-Bold',
     fontSize: DeviceInfo.hp('1.4%'),
+    includeFontPadding: false,
+    // borderWidth:1
   },
   itemDetailsView: {
     // borderWidth:1,
@@ -196,7 +199,9 @@ const styles = StyleSheet.create({
   },
   countView: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    marginTop: DeviceInfo.hp('2.3%'),
     // borderWidth:1
   },
   handleCountTextView: {
@@ -216,6 +221,7 @@ const styles = StyleSheet.create({
   },
   deleteView: {
     flexDirection: 'column',
+    // borderWidth:1
   },
   deleteText: {
     fontFamily: 'Poppins-Medium',
@@ -224,7 +230,7 @@ const styles = StyleSheet.create({
   },
   totalView: {
     fontFamily: 'Poppins-Medium',
-    fontSize: DeviceInfo.hp('1.2%'),
+    fontSize: DeviceInfo.hp('1.5%'),
     includeFontPadding: false,
     // textAlignVertical:'center'
   },
@@ -233,17 +239,20 @@ const styles = StyleSheet.create({
     marginTop: Platform.OS === 'ios' ? 0 : -2,
   },
   underLineForBasket: {
-    width: '85%',
+    width: '100%',
     alignSelf: 'center',
   },
   totalTextView: {
     borderWidth: 1,
     borderColor: COLOR.yellow,
-    paddingHorizontal: DeviceInfo.wp('3.2%'),
-    borderRadius: DeviceInfo.wp('2.5%'),
-    height: DeviceInfo.wp('4%'),
+    width: DeviceInfo.width * 0.16,
+    // paddingVertical:3,
+    // paddingHorizontal: DeviceInfo.wp('5.2%'),
+    borderRadius: 8,
+    height: DeviceInfo.wp('5%'),
     justifyContent: 'center',
     alignItems: 'center',
+    marginHorizontal: DeviceInfo.wp('2%'),
     // paddingTop: 3,
   },
   mb: {

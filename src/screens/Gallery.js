@@ -52,25 +52,28 @@ const Gallery = ({text1, text2, style}) => {
           </View>
           <View style={styles.socialInfoWrapper}>
             <Text style={styles.designation}>
-              Hodd Barnes Dickins Opticians
+              Hodd Barnes & D Masons Ave 
             </Text>
-            <Text style={styles.designationInfoText}>
+            <Text style={styles.medicalHealth}>Medical & Health</Text>
+            {/* <Text style={styles.designationInfoText}>
               Holborn's Best Optician bringing the most exclusive styles and
               design to London. A stone's throw from Halborn Station.
-            </Text>
-            <Text style={styles.linkText}>www.hoddbarnesdickins.co.uk</Text>
+            </Text> */}
+            <Text style={styles.linkText}>www.hoddbarnesdickins.com</Text>
+            <Text style={styles.medicalHealth}>11 masons ave, London, United Kingdom</Text>
+            <Text style={styles.medicalHealth}>Followed by i_am_raquel_, catjohnson3 and 7 others</Text>
           </View>
           <View style={styles.infoView}>
             <View style={styles.socialInfoView}>
-              <Text style={styles.designation}>170</Text>
+              <Text style={styles.designation}>76</Text>
               <Text style={styles.infoType}>posts</Text>
             </View>
             <View style={styles.socialInfoView}>
-              <Text style={styles.designation}>745</Text>
+              <Text style={styles.designation}>133</Text>
               <Text style={styles.infoType}>followers</Text>
             </View>
             <View style={styles.socialInfoView}>
-              <Text style={styles.designation}>33</Text>
+              <Text style={styles.designation}>122</Text>
               <Text style={styles.infoType}>following</Text>
             </View>
           </View>
@@ -203,8 +206,16 @@ const styles = StyleSheet.create({
     borderColor: COLOR.blackBorder,
   },
   linkText: {
-    color: '#01356a',
-    fontFamily: 'Poppins-Bold',
+    // color: '#01356a',
+    fontFamily: 'Poppins-light',
     fontSize: DeviceInfo.hp('1.4%'),
   },
+  medicalHealth:{
+    fontSize: DeviceInfo.hp('1.3%'),
+    color:COLOR.borderColor,
+    fontFamily: 'Poppins-light',
+  },
+  addBio:{
+
+  }
 });

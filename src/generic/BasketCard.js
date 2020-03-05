@@ -50,9 +50,6 @@ const BasketCard = ({type, onPress}) => {
                   <View
                     style={[
                       styles.totalTextView,
-                      // styles.mb,
-                      // Platform.OS === 'ios' &&
-                      //   DeviceInfo.height < 700 && {marginBottom: 3},
                     ]}>
                     <Text style={styles.totalView}>1</Text>
                   </View>``
@@ -147,11 +144,8 @@ const styles = StyleSheet.create({
   contentView: {
     flexDirection: 'row',
     width: '92%',
-    // borderWidth:1,
     alignSelf: 'center',
-    // alignItems: 'center',
     borderBottomWidth: 1,
-    // height: DeviceInfo.width * 0.25,
     paddingBottom: DeviceInfo.hp('1.7%'),
     marginBottom: DeviceInfo.hp('1.7%'),
   },
@@ -173,16 +167,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    // borderWidth:1
   },
   name: {
     fontFamily: 'Poppins-Regular',
     fontSize: DeviceInfo.hp('1.63%'),
   },
   itemDetails: {
-    // borderWidth:1,
-    // flex:1,
-
     fontFamily: 'Poppins-Light',
     fontSize: DeviceInfo.hp('1.1%'),
   },
@@ -190,10 +180,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     fontSize: DeviceInfo.hp('1.4%'),
     includeFontPadding: false,
-    // borderWidth:1
   },
   itemDetailsView: {
-    // borderWidth:1,
     width: DeviceInfo.wp('50%'),
     justifyContent: 'space-between',
   },
@@ -202,10 +190,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     marginTop: DeviceInfo.hp('2.3%'),
-    // borderWidth:1
   },
   handleCountTextView: {
-    // backgroundColor: COLOR.black,
     width: DeviceInfo.wp('5%'),
     height: DeviceInfo.wp('5%'),
     justifyContent: 'center',
@@ -221,7 +207,6 @@ const styles = StyleSheet.create({
   },
   deleteView: {
     flexDirection: 'column',
-    // borderWidth:1
   },
   deleteText: {
     fontFamily: 'Poppins-Medium',
@@ -232,7 +217,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontSize: DeviceInfo.hp('1.5%'),
     includeFontPadding: false,
-    // textAlignVertical:'center'
   },
   underLine: {
     borderBottomWidth: 1,
@@ -246,14 +230,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLOR.yellow,
     width: DeviceInfo.width * 0.16,
-    // paddingVertical:3,
-    // paddingHorizontal: DeviceInfo.wp('5.2%'),
     borderRadius: 8,
     height: DeviceInfo.wp('5%'),
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: DeviceInfo.wp('2%'),
-    // paddingTop: 3,
   },
   mb: {
     marginBottom: 5,

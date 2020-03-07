@@ -31,6 +31,7 @@ const Basket = ({navigation}) => {
               paddingBottom: DeviceInfo.hp('1.2%'),
             }}
             shop
+            handleText={()=>navigation.goBack()}
             textStyle={{color: COLOR.black}}
           />
           <BasketCard />

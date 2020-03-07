@@ -20,13 +20,12 @@ const RecentOrders = ({navigation}) => {
       <View style={styles.container}>
         <AppLogo
           logoBg={COLOR.blackBg}
-
-          // handleText={()=>this.props.navigation.back()}
         />
         <ScrollView>
           <LogoText
             text1="Recent orders"
             shop
+            handleText={()=>navigation.goBack()}
             style={{
               paddingTop: DeviceInfo.hp('3.8%'),
               paddingBottom: DeviceInfo.hp('1.2%'),
@@ -34,7 +33,7 @@ const RecentOrders = ({navigation}) => {
             textStyle={{color: COLOR.black}}
           />
           <BasketCard
-            type="recent" /* onPress={()=>navigation.navigate('ContactUs')} */
+            type="recent"
           />
         </ScrollView>
       </View>

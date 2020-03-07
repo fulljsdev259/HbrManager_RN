@@ -114,14 +114,8 @@ export default class ImageCarousel extends Component {
       <View
         style={{
           width: '85%',
-          //   borderWidth: 1,
           justifyContent: 'center',
           alignItems: 'center',
-          //   paddingTop:20
-          //   height: DeviceInfo.hp('25%'),
-
-          //   alignSelf: 'center',
-          //   alignItems: 'center',
         }}>
         <View style={styles.priceView}>
           <View style={{flexDirection: 'column'}}>
@@ -133,10 +127,8 @@ export default class ImageCarousel extends Component {
         <Image
           style={{
             width: '60%',
-            // borderWidth: 1,
             height: DeviceInfo.hp('15%'),
             marginVertical: DeviceInfo.hp('6%'),
-            // marginBottom:-20
           }}
           resizeMode="contain"
           source={item.img}
@@ -211,6 +203,7 @@ export default class ImageCarousel extends Component {
         <ScrollView>
           <LogoText
             shop
+            handleText={()=>this.props.navigation.goBack()}
             text1="Comfi Colors 1 Day"
             style={{
               paddingTop: DeviceInfo.hp('3.8%'),

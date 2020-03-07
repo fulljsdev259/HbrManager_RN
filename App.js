@@ -36,17 +36,10 @@ const ref = React.createRef();
 const Stack = createStackNavigator();
 const transparentBgScreens = []
 const App= (props) => {
-  const backgroundColor  = ['ApplyOrSignin', 'SignIn', 'AppLoyaltyCard', 'ContactUs', 'SocilLogin']
-  console.log(ref.current && ref.current.getRootState(),props,'refm');
- function handleRouteChange(){
-
-  }
   
   return (
     <>
-    {/* <AppLogo /> */}
     <NavigationContainer
-    onStateChange={(state)=>handleRouteChange(state)}
     ref={ref}>
       <Stack.Navigator
         initialRouteName="Welcome"

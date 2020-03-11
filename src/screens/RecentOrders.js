@@ -25,7 +25,7 @@ const RecentOrders = ({navigation}) => {
           <LogoText
             text1="Recent orders"
             shop
-            handleText={()=>navigation.goBack()}
+            handleText={()=>navigation.navigate('OderContactLens')}
             style={{
               paddingTop: DeviceInfo.hp('3.8%'),
               paddingBottom: DeviceInfo.hp('1.2%'),

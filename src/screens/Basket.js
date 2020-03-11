@@ -31,7 +31,7 @@ const Basket = ({navigation}) => {
               paddingBottom: DeviceInfo.hp('1.2%'),
             }}
             shop
-            handleText={()=>navigation.goBack()}
+            handleText={()=>navigation.navigate('OderContactLens')}
             textStyle={{color: COLOR.black}}
           />
           <BasketCard />

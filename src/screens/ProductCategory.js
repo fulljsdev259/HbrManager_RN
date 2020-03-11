@@ -37,6 +37,18 @@ export const contactLenses = [
     price: '£3.99',
     resizeMode: 'cover',
   },
+  {
+    img: require('../../assets/product-category/my-Day.jpg'),
+    name: 'Dailies Total 1',
+    price: '£3.99',
+    resizeMode: 'cover',
+  },
+  {
+    img: require('../../assets/product-category/softlens.jpg'),
+    name: 'Dailies Total 1',
+    price: '£3.99',
+    resizeMode: 'cover',
+  },
 ];
 
 const ProductCategory = ({navigation}) => {

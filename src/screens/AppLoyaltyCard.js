@@ -23,7 +23,7 @@ const AppLoyaltyCard = ({navigation})=>{
                     <GenericButton
                         text="Go to home"
                         style={styles.genericBtn}
-                        onPress={()=>navigation.navigate("MemberBenefits")}
+                        onPress={()=>navigation.navigate("Welcome")}
                     />
                 </View>
             </ImageBackground>

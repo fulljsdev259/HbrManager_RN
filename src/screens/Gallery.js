@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignSelf: 'center',
     // paddingTop: DeviceInfo.wp('8%'),
-    marginBottom: DeviceInfo.wp('8%'),
+    // marginBottom: DeviceInfo.wp('8%'),
   },
   headerView: {
     flexDirection: 'row',

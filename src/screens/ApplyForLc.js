@@ -21,7 +21,7 @@ import LogoText from '../generic/LogoText';
 console.log(DeviceInfo.height, 'kkkk');
 
 const textFeild = [
-  'Patient number',
+  'Patient Number (use DOB dd/mm/yyyy)',
   'Black or teal card',
   'First name',
   'Last name',
@@ -128,7 +128,7 @@ const ApplyForLc = ({route, navigation}) => {
         <GenericButton
           text="Submit"
           style={styles.genericBtn}
-          onPress={() => navigation.navigate('AppLoyaltyCard')}
+          onPress={() => navigation.navigate(isToChangePassword ? "SignIn" : 'AppLoyaltyCard')}
         />
       </ScrollView>
     </View>

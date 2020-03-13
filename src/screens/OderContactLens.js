@@ -85,6 +85,8 @@ const OderContactLens = ({navigation}) => {
         
         <LogoText
           text1="Order contact lenses"
+          shop
+          handleText={()=>navigation.navigate('ProductCategory')}
           style={{
             paddingTop: DeviceInfo.hp('6%'),
             paddingBottom: DeviceInfo.hp('4%'),

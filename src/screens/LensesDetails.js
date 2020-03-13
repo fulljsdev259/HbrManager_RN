@@ -189,8 +189,6 @@ export default class ImageCarousel extends Component {
   };
 
   render() {
-    console.log(this.props, 'kkkkkkkkkk');
-
     const slideHeight = DeviceInfo.height * 0.36;
     const slideWidth = this.wp(100);
     const itemHorizontalMargin = this.wp(2);

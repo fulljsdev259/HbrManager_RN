@@ -49,6 +49,12 @@ export const contactLenses = [
     price: '£3.99',
     resizeMode: 'cover',
   },
+  {
+    img: require('../../assets/product-category/HBD-Options.jpg'),
+    name: 'Dailies Total 1',
+    price: '£3.99',
+    resizeMode: 'cover',
+  },
 ];
 
 const ProductCategory = ({navigation}) => {
@@ -98,7 +104,7 @@ export default ProductCategory;
 
 const styles = StyleSheet.create({
   container: {
-    // flex:1,
+    flex:1,
     // borderWidth:10,
     // borderColor:'green'
   },

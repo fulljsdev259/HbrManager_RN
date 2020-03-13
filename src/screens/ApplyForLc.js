@@ -41,7 +41,7 @@ const ApplyForLc = ({route, navigation}) => {
   return (
     <View style={styles.container}>
       <AppLogo />
-      <ScrollView>
+      <ScrollView style={{flex:1}}>
         <LogoText
           text1={isToChangePassword ? 'Change password' : 'Apply for a'}
           text2={isToChangePassword ? ' ' : 'loyalty card'}

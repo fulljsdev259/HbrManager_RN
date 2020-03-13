@@ -17,7 +17,7 @@ const filtersType = [
   {name:'Sort', categories:["Daily","Multifocal","Astigmatism/Toric","2 Weekly","Extended Wear",]},
   {name:'Category',categories:["Daily","Multifocal","Astigmatism/Toric","2 Weekly","Extended Wear",]},
   {name:'Price',categories:['Price - Low to High', 'Price - High to Low', 'Newest First']},
-  {name:'Brand', categories:['ACUVUE','DAILIES', 'MyDay', 'HDR Options', 'clariti', 'Biotrue', 'SofLens' ]},
+  {name:'Brand', categories:['ACUVUE','DAILIES', 'MyDay', 'HBD Options', 'clariti', 'Biotrue', 'SofLens' ]},
   {name:'Lens Color', categories:['Spicy Gray', 'Aqua Color', 'Dusky Brown']},
 ];
 

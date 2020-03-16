@@ -19,7 +19,7 @@ import AppLoyaltyCard from './src/screens/AppLoyaltyCard';
 import MemberBenefits from './src/screens/MenberBenefits';
 import OderContactLens from './src/screens/OderContactLens';
 import BookAppointment from './src/screens/BookAppointment';
-import LensesDetails from './src/screens/LensesDetails'
+import LensesDetails from './src/screens/LensesDetails';
 import Basket from './src/screens/Basket';
 import RecentOrders from './src/screens/RecentOrders';
 import ContactUs from './src/screens/ContactUs';
@@ -31,6 +31,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Footer from './src/generic/Footer';
 import AppLogo from './src/generic/AppLogo'
+import DuplicateApplyForLc from './src/screens/DuplicateApplyForLc';
 
 const ref = React.createRef();
 const Stack = createStackNavigator();
@@ -123,7 +124,7 @@ const App= (props) => {
         />
         <Stack.Screen 
           name="ApplyForLc" 
-          component={ApplyForLc}
+          component={DuplicateApplyForLc}
           options={
             {headerShown:false}
           }
